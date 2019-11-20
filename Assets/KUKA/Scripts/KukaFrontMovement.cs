@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections.Generic;
 
 public class KukaFrontMovement : MonoBehaviour
 {
@@ -32,6 +33,7 @@ public class KukaFrontMovement : MonoBehaviour
     private bool Top = false;
     private bool Bottom = false;
     private bool ReturnHome = false;
+    private bool PositionChanged = false;
 
     // Start is called before the first frame update
     void Start()
@@ -42,6 +44,10 @@ public class KukaFrontMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (PositionChanged)
+        {
+            print("KukaFront moves to");
+        }
 
         if (Input.GetKeyDown(KeyCode.F5))
         {
@@ -58,6 +64,14 @@ public class KukaFrontMovement : MonoBehaviour
         }
         if (Top)
         {
+            to8 = new Vector3(0, 347, 0);
+            to7 = new Vector3(0, 0, 72);
+            to6 = new Vector3(0, 113, 0);
+            to5 = new Vector3(0, 0, 313);
+            to4 = new Vector3(0, 63, 0);
+            to3 = new Vector3(0, 0, 276);
+            to2 = new Vector3(0, 31, 0);
+
             if (Vector3.Distance(part8.transform.localEulerAngles, to8) > 1f)
             {
                 position8 -= moveY;
@@ -326,6 +340,42 @@ public class KukaFrontMovement : MonoBehaviour
             Bottom = false;
             ReturnHome = false;
         }
+    }
+
+    public void setPosition(int coord, int part)
+    {
+        print("Coord: " + coord + "Part: " + part);
+        PositionChanged = true;
+        switch (part)
+        {
+            case 1:
+                Top = true;
+                break;
+            case 2:
+                to2 = new Vector3(0, coord, 0);
+                break;
+            case 3:
+                to3 = new Vector3(0, 0, coord);
+                break;
+            case 4:
+                to4 = new Vector3(0, coord, 0);
+                break;
+            case 5:
+                to5 = new Vector3(0, 0, coord);
+                break;
+            case 6:
+                to6 = new Vector3(0, coord, 0);
+                break;
+            case 7:
+                to7 = new Vector3(0, 0, coord);
+                break;
+            case 8:
+                to8 = new Vector3(0, coord, 0);
+                break;
+            default:
+                break;
+        }
+
     }
 }
 

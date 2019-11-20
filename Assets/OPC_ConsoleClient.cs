@@ -12,6 +12,12 @@ public class OPC_ConsoleClient : MonoBehaviour
     MyClient client;
     static Session session;
     static Subscription subscription;
+    private static KukaFrontMovement kukaFrontMovement;
+
+    private void Awake()
+    {
+        kukaFrontMovement = GameObject.FindObjectOfType<KukaFrontMovement>();
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +29,8 @@ public class OPC_ConsoleClient : MonoBehaviour
 
         //string endpointURL = "opc.tcp://localhost:51210/UA/SampleServer";
         //string endpointURL = "opc.tcp://opcuaserver.com:48484";
-        string endpointURL = "opc.tcp://milo.digitalpetri.com:62541/milo";
+        //string endpointURL = "opc.tcp://milo.digitalpetri.com:62541/milo";
+        string endpointURL = "opc.tcp://193.170.2.252:30005/Kuka";
 
         client = new MyClient(endpointURL, autoAccept);
         client.Run();
@@ -127,29 +134,39 @@ public class OPC_ConsoleClient : MonoBehaviour
                 out continuationPoint,
                 out references);
 
-            //print(" DisplayName, BrowseName, NodeClass");
-            //foreach (var rd in references)
-            //{
-            //    print(rd.DisplayName + " " + rd.BrowseName + " " + rd.NodeClass);
-            //    ReferenceDescriptionCollection nextRefs;
-            //    byte[] nextCp;
-            //    session.Browse(
-            //        null,
-            //        null,
-            //        ExpandedNodeId.ToNodeId(rd.NodeId, session.NamespaceUris),
-            //        0u,
-            //        BrowseDirection.Forward,
-            //        ReferenceTypeIds.HierarchicalReferences,
-            //        true,
-            //        (uint)NodeClass.Variable | (uint)NodeClass.Object | (uint)NodeClass.Method,
-            //        out nextCp,
-            //        out nextRefs);
+            print(" DisplayName, BrowseName, NodeClass");
+            foreach (var rd in references)
+            {
+                print(rd.DisplayName + " " + rd.BrowseName + " " + rd.NodeClass);
+                ReferenceDescriptionCollection nextRefs;
+                byte[] nextCp;
+                session.Browse(
+                    null,
+                    null,
+                    ExpandedNodeId.ToNodeId(rd.NodeId, session.NamespaceUris),
+                    0u,
+                    BrowseDirection.Forward,
+                    ReferenceTypeIds.HierarchicalReferences,
+                    true,
+                    (uint)NodeClass.Variable | (uint)NodeClass.Object | (uint)NodeClass.Method,
+                    out nextCp,
+                    out nextRefs);
 
-            //    foreach (var nextRd in nextRefs)
-            //    {
-            //        print(nextRd.DisplayName + " " + nextRd.BrowseName + " " + nextRd.NodeClass);
-            //    }
-            //}
+                foreach (var nextRd in nextRefs)
+                {
+                    print(
+                        "DisplayName: "
+                        + nextRd.DisplayName
+                        + "\nBrowserName: "
+                        + nextRd.BrowseName
+                        + "\nNodeId: "
+                        + nextRd.NodeId
+                        + "\nNodeClass: "
+                        + nextRd.NodeClass
+                        + "\nToString: "
+                        + nextRd.ToString());//+ " " + nextRd.BrowseName + " " + nextRd.NodeClass
+                }
+            }
 
             print("5 - Create a subscription with publishing interval of 10 second.");
             subscription = new Subscription(session.DefaultSubscription) { PublishingInterval = 10000 };
@@ -158,26 +175,57 @@ public class OPC_ConsoleClient : MonoBehaviour
             var list = new List<MonitoredItem> {
                 new MonitoredItem(subscription.DefaultItem)
                 {
-                    DisplayName = "ServerStatusCurrentTime", StartNodeId = "i="+Variables.Server_ServerStatus_CurrentTime.ToString()
+                    DisplayName = "ServerStatusCurrentTime",
+                    StartNodeId = "i="+Variables.Server_ServerStatus_CurrentTime.ToString()
                 }
             };
 
-            //add new items to subscribe to
+            ////add new items to subscribe to
+            
+            for (int m=1; m < 8; m++)
+            {
+                list.Add(new MonitoredItem(subscription.DefaultItem)
+                {
+                    DisplayName = "J"+m,
+                    StartNodeId = "ns=1;s=J" + m
+                });
+            }
+
+            for(int l = 1; l < 8; l++)
+            {
+                list.Add(new MonitoredItem(subscription.DefaultItem)
+                {
+                    DisplayName = "MT" + l,
+                    StartNodeId = "ns=1;s=MT" + l
+                });
+            }
+            
+
+            foreach (var item in list)
+            {
+                print(item.DisplayName);
+                print(item.ToString());
+            }
+
             subscription.AddItems(list);
 
             list.ForEach(i => i.Notification += OnNotification);
 
-
             print("7 - Add the subscription to the session.");
             session.AddSubscription(subscription);
             subscription.Create();
+            print("Subscription added");
+            print("Client Running");
+            kukaFrontMovement.setPosition(1, 1);
         }
-
+        static int i = 0;
         private static void OnNotification(MonitoredItem item, MonitoredItemNotificationEventArgs e)
         {
             foreach (var value in item.DequeueValues())
             {
-                print(item.DisplayName + " " + value.Value + " " + value.SourceTimestamp + " " + value.StatusCode);
+                kukaFrontMovement.setPosition((int)value.Value, Int32.Parse(item.StartNodeId.ToString()));
+                print(i++);
+                print("Name: " + item.DisplayName + "\nValue: " + value.Value + "\nTimeStamp: " + value.SourceTimestamp + "\nStatusCode:" + value.StatusCode);
             }
         }
 
@@ -201,10 +249,13 @@ public class OPC_ConsoleClient : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!Application.isPlaying)
-        {
-            session.RemoveSubscription(subscription);
-            session.Dispose();
-        }
+        
+    }
+
+    private void OnDestroy()
+    {
+        session.RemoveSubscription(subscription);
+        session.Dispose();
+        print("SessionDisposed");
     }
 }
