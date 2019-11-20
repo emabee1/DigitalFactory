@@ -11,7 +11,7 @@ public class OPC_ConsoleClient : MonoBehaviour
 {
     MyClient client;
     static Session session;
-    static Subscription subscription;
+    static Opc.Ua.Client.Subscription subscription;
     private static KukaFrontMovement kukaFrontMovement;
 
     private void Awake()
@@ -29,8 +29,9 @@ public class OPC_ConsoleClient : MonoBehaviour
 
         //string endpointURL = "opc.tcp://localhost:51210/UA/SampleServer";
         //string endpointURL = "opc.tcp://opcuaserver.com:48484";
-        //string endpointURL = "opc.tcp://milo.digitalpetri.com:62541/milo";
-        
+        string endpointURL = "opc.tcp://milo.digitalpetri.com:62541/milo";
+        //string endpointURL = "opc.tcp://193.170.2.252:30005/Kuka"; // TODO always delete bevor commit
+
 
         client = new MyClient(endpointURL, autoAccept);
         client.Run();
@@ -169,42 +170,42 @@ public class OPC_ConsoleClient : MonoBehaviour
             }
 
             print("5 - Create a subscription with publishing interval of 10 second.");
-            subscription = new Subscription(session.DefaultSubscription) { PublishingInterval = 10000 };
+            subscription = new Subscription(session.DefaultSubscription) { PublishingInterval = 100 };
 
             print("6 - Add a list of items (server current time and status) to the subscription.");
             var list = new List<MonitoredItem> {
                 new MonitoredItem(subscription.DefaultItem)
                 {
-                    DisplayName = "ServerStatusCurrentTime",
-                    StartNodeId = "i="+Variables.Server_ServerStatus_CurrentTime.ToString()
+                    DisplayName = "double",
+                    StartNodeId = "ns=2;s=Dynamic/RandomDouble"
                 }
             };
 
-            ////add new items to subscribe to
-            
-            for (int m=1; m < 8; m++)
-            {
-                list.Add(new MonitoredItem(subscription.DefaultItem)
-                {
-                    DisplayName = "J"+m,
-                    StartNodeId = "ns=1;s=J" + m
-                });
-            }
+            //add new items to subscribe to
+            //J1-7 is NodeId for KukaFront
 
-            for(int l = 1; l < 8; l++)
-            {
-                list.Add(new MonitoredItem(subscription.DefaultItem)
-                {
-                    DisplayName = "MT" + l,
-                    StartNodeId = "ns=1;s=MT" + l
-                });
-            }
-            
+            //for (int m = 1; m < 8; m++)
+            //{
+            //    list.Add(new MonitoredItem(subscription.DefaultItem)
+            //    {
+            //        DisplayName = "J" + m,
+            //        StartNodeId = "ns=1;s=J" + m
+            //    });
+            //}
+
+            //for(int l = 1; l < 8; l++)
+            //{
+            //    list.Add(new MonitoredItem(subscription.DefaultItem)
+            //    {
+            //        DisplayName = "MT" + l,
+            //        StartNodeId = "ns=1;s=MT" + l
+            //    });
+            //}
+
 
             foreach (var item in list)
             {
-                print(item.DisplayName);
-                print(item.ToString());
+                print("ItemDisplayName: " + item.DisplayName);
             }
 
             subscription.AddItems(list);
@@ -214,16 +215,36 @@ public class OPC_ConsoleClient : MonoBehaviour
             print("7 - Add the subscription to the session.");
             session.AddSubscription(subscription);
             subscription.Create();
+            print("subscription Count: " + session.SubscriptionCount);
+            
             print("Subscription added");
             print("Client Running");
-            kukaFrontMovement.setPosition(1, 1);
+            subscription.PublishStatusChanged += Subscription_PublishStatusChanged;
+            
         }
+
+        private void Subscription_PublishStatusChanged(object sender, EventArgs e)
+        {
+            Subscription sub = (Subscription)sender;
+            print(sub.ToString());
+
+            foreach (var item in sub.MonitoredItems)
+            {
+                print(item.ToString());
+                foreach (var value in item.DequeueValues())
+                {
+                    print("here");
+                    print(value);
+                }
+            }
+        }
+
         static int i = 0;
         private static void OnNotification(MonitoredItem item, MonitoredItemNotificationEventArgs e)
         {
             foreach (var value in item.DequeueValues())
             {
-                kukaFrontMovement.setPosition((int)value.Value, Int32.Parse(item.StartNodeId.ToString()));
+                kukaFrontMovement.setPosition((float)value.Value, Int32.Parse(item.StartNodeId.ToString()));
                 print(i++);
                 print("Name: " + item.DisplayName + "\nValue: " + value.Value + "\nTimeStamp: " + value.SourceTimestamp + "\nStatusCode:" + value.StatusCode);
             }

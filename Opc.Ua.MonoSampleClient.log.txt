@@ -1,10 +1,576 @@
 
-************************* Logging started at 11/20/2019 09:02:31
-20.11.2019 09:02:31.347 Checking application instance certificate.
-20.11.2019 09:02:31.354 Checking application instance certificate. CN=UA Mono Sample Client, C=US, S=Arizona, O=OPC Foundation, DC=kami-nb
-20.11.2019 09:02:31.561 Channel 0 in Connecting state.
-20.11.2019 09:02:52.604 ***EXCEPTION*** BadNotConnected
-20.11.2019 09:02:52.615 ***EXCEPTION*** BadNotConnected 'Error establishing a connection: BadNotConnected'
-20.11.2019 09:02:52.622 Channel 0: Close
-20.11.2019 09:02:52.634 Channel 0 in Closed state.
-20.11.2019 09:02:52.640 CLIENTCHANNEL SOCKET CLOSED: FFFFFFFF, ChannelId=0
+************************* Logging started at 11/20/2019 13:15:40
+20.11.2019 13:15:40.240 Checking application instance certificate.
+20.11.2019 13:15:40.248 Checking application instance certificate. CN=UA Mono Sample Client, C=US, S=Arizona, O=OPC Foundation, DC=kami-nb
+20.11.2019 13:15:40.492 Channel 0 in Connecting state.
+20.11.2019 13:15:40.707 Channel 0: SendHelloMessage()
+20.11.2019 13:15:40.895 Channel 0: ProcessAcknowledgeMessage()
+20.11.2019 13:15:40.901 Channel 0 in Opening state.
+20.11.2019 13:15:40.907 Token #0 created. CreatedAt = 12:15:40.906 . Lifetime = 3600000
+20.11.2019 13:15:41.102 Channel 0: ProcessOpenSecureChannelResponse()
+20.11.2019 13:15:41.109 Security Policy: http://opcfoundation.org/UA/SecurityPolicy#None
+20.11.2019 13:15:41.114 Sender Certificate: (none)
+20.11.2019 13:15:41.125 SECURE CHANNEL CREATED [.NetStandard ClientChannel UA-TCP 1.4.354.0] [ID=389] Connected To: opc.tcp://milo.digitalpetri.com:62541/milo [None/None/Binary]
+20.11.2019 13:15:41.131 Token #808 activated. CreatedAt = 12:15:40.906 . Lifetime = 3600000
+20.11.2019 13:15:41.135 Channel 389 in Open state.
+20.11.2019 13:15:41.449 Channel 389: Close
+20.11.2019 13:15:41.454 Channel 389 in Closing state.
+20.11.2019 13:15:41.459 Channel 389: SendCloseSecureChannelRequest()
+20.11.2019 13:15:41.786 Channel 0 in Closed state.
+20.11.2019 13:15:41.792 CLIENTCHANNEL SOCKET CLOSED: EB07C300, ChannelId=389
+20.11.2019 13:15:41.827 Channel 0 in Connecting state.
+20.11.2019 13:15:42.049 Channel 0: SendHelloMessage()
+20.11.2019 13:15:42.237 Channel 0: ProcessAcknowledgeMessage()
+20.11.2019 13:15:42.241 Channel 0 in Opening state.
+20.11.2019 13:15:42.246 Token #0 created. CreatedAt = 12:15:42.245 . Lifetime = 3600000
+20.11.2019 13:15:42.533 Channel 0: ProcessOpenSecureChannelResponse()
+20.11.2019 13:15:42.538 Security Policy: http://opcfoundation.org/UA/SecurityPolicy#None
+20.11.2019 13:15:42.543 Sender Certificate: (none)
+20.11.2019 13:15:42.548 SECURE CHANNEL CREATED [.NetStandard ClientChannel UA-TCP 1.4.354.0] [ID=390] Connected To: opc.tcp://milo.digitalpetri.com:62541/milo [None/None/Binary]
+20.11.2019 13:15:42.553 Token #809 activated. CreatedAt = 12:15:42.245 . Lifetime = 3600000
+20.11.2019 13:15:42.558 Channel 390 in Open state.
+20.11.2019 13:15:43.283 Revised session timeout value: 60000. 
+20.11.2019 13:15:43.289 Max response message size value: 4194304. Max request message size: 2097152 
+20.11.2019 13:15:43.295 Server signature is null or empty.
+20.11.2019 13:15:43.587 Empty results were received for the ActivateSession call.
+20.11.2019 13:15:46.164 PUBLISH #1 SENT
+20.11.2019 13:15:46.342 PUBLISH #1 RECEIVED
+20.11.2019 13:15:46.348 NOTIFICATION RECEIVED: SubId=69, SeqNo=1
+20.11.2019 13:15:46.357 PUBLISH #2 SENT
+20.11.2019 13:15:46.694 PUBLISH #2 RECEIVED
+20.11.2019 13:15:46.705 NOTIFICATION RECEIVED: SubId=69, SeqNo=1
+20.11.2019 13:15:46.718 PUBLISH #3 SENT
+20.11.2019 13:15:46.730 NotificationReceived: ClientHandle=4, Value=0.439120240095197
+20.11.2019 13:15:46.757 Error while processing incoming message #1. InvalidCastException 'Specified cast is not valid.'
+
+========================================
+Id: Bad
+Description: Specified cast is not valid.
+>>> Specified cast is not valid.
+---   at OPC_ConsoleClient+MyClient.OnNotification (Opc.Ua.Client.MonitoredItem item, Opc.Ua.Client.MonitoredItemNotificationEventArgs e) [0x0001b] in C:\Users\kami\work\Unity\FactoryServusreal\Assets\OPC_ConsoleClient.cs:246 
+---   at Opc.Ua.Client.MonitoredItem.SaveValueInCache (Opc.Ua.IEncodeable newValue) [0x001db] in <8ffa02eb4d0640189224b47729113681>:0 
+---   at Opc.Ua.Client.Subscription.SaveDataChange (Opc.Ua.NotificationMessage message, Opc.Ua.DataChangeNotification notifications, System.Collections.Generic.IList`1[T] stringTable) [0x000f9] in <8ffa02eb4d0640189224b47729113681>:0 
+---   at Opc.Ua.Client.Subscription.OnMessageReceived (System.Object state) [0x0026e] in <8ffa02eb4d0640189224b47729113681>:0 
+========================================
+
+20.11.2019 13:15:46.895 PUBLISH #3 RECEIVED
+20.11.2019 13:15:46.902 NOTIFICATION RECEIVED: SubId=69, SeqNo=2
+20.11.2019 13:15:46.910 PUBLISH #4 SENT
+20.11.2019 13:15:46.911 NotificationReceived: ClientHandle=4, Value=0.315632952053299
+20.11.2019 13:15:46.924 Error while processing incoming message #2. InvalidCastException 'Specified cast is not valid.'
+
+========================================
+Id: Bad
+Description: Specified cast is not valid.
+>>> Specified cast is not valid.
+---   at OPC_ConsoleClient+MyClient.OnNotification (Opc.Ua.Client.MonitoredItem item, Opc.Ua.Client.MonitoredItemNotificationEventArgs e) [0x0001b] in C:\Users\kami\work\Unity\FactoryServusreal\Assets\OPC_ConsoleClient.cs:246 
+---   at Opc.Ua.Client.MonitoredItem.SaveValueInCache (Opc.Ua.IEncodeable newValue) [0x001db] in <8ffa02eb4d0640189224b47729113681>:0 
+---   at Opc.Ua.Client.Subscription.SaveDataChange (Opc.Ua.NotificationMessage message, Opc.Ua.DataChangeNotification notifications, System.Collections.Generic.IList`1[T] stringTable) [0x000f9] in <8ffa02eb4d0640189224b47729113681>:0 
+---   at Opc.Ua.Client.Subscription.OnMessageReceived (System.Object state) [0x0026e] in <8ffa02eb4d0640189224b47729113681>:0 
+========================================
+
+20.11.2019 13:15:47.085 PUBLISH #4 RECEIVED
+20.11.2019 13:15:47.095 NOTIFICATION RECEIVED: SubId=69, SeqNo=3
+20.11.2019 13:15:47.110 PUBLISH #5 SENT
+20.11.2019 13:15:47.112 NotificationReceived: ClientHandle=4, Value=0.11269767068306
+20.11.2019 13:15:47.138 Error while processing incoming message #3. InvalidCastException 'Specified cast is not valid.'
+
+========================================
+Id: Bad
+Description: Specified cast is not valid.
+>>> Specified cast is not valid.
+---   at OPC_ConsoleClient+MyClient.OnNotification (Opc.Ua.Client.MonitoredItem item, Opc.Ua.Client.MonitoredItemNotificationEventArgs e) [0x0001b] in C:\Users\kami\work\Unity\FactoryServusreal\Assets\OPC_ConsoleClient.cs:246 
+---   at Opc.Ua.Client.MonitoredItem.SaveValueInCache (Opc.Ua.IEncodeable newValue) [0x001db] in <8ffa02eb4d0640189224b47729113681>:0 
+---   at Opc.Ua.Client.Subscription.SaveDataChange (Opc.Ua.NotificationMessage message, Opc.Ua.DataChangeNotification notifications, System.Collections.Generic.IList`1[T] stringTable) [0x000f9] in <8ffa02eb4d0640189224b47729113681>:0 
+---   at Opc.Ua.Client.Subscription.OnMessageReceived (System.Object state) [0x0026e] in <8ffa02eb4d0640189224b47729113681>:0 
+========================================
+
+20.11.2019 13:15:47.287 PUBLISH #5 RECEIVED
+20.11.2019 13:15:47.315 NOTIFICATION RECEIVED: SubId=69, SeqNo=4
+20.11.2019 13:15:47.336 PUBLISH #6 SENT
+20.11.2019 13:15:47.338 NotificationReceived: ClientHandle=4, Value=0.693902207245603
+20.11.2019 13:15:47.391 Error while processing incoming message #4. InvalidCastException 'Specified cast is not valid.'
+
+========================================
+Id: Bad
+Description: Specified cast is not valid.
+>>> Specified cast is not valid.
+---   at OPC_ConsoleClient+MyClient.OnNotification (Opc.Ua.Client.MonitoredItem item, Opc.Ua.Client.MonitoredItemNotificationEventArgs e) [0x0001b] in C:\Users\kami\work\Unity\FactoryServusreal\Assets\OPC_ConsoleClient.cs:246 
+---   at Opc.Ua.Client.MonitoredItem.SaveValueInCache (Opc.Ua.IEncodeable newValue) [0x001db] in <8ffa02eb4d0640189224b47729113681>:0 
+---   at Opc.Ua.Client.Subscription.SaveDataChange (Opc.Ua.NotificationMessage message, Opc.Ua.DataChangeNotification notifications, System.Collections.Generic.IList`1[T] stringTable) [0x000f9] in <8ffa02eb4d0640189224b47729113681>:0 
+---   at Opc.Ua.Client.Subscription.OnMessageReceived (System.Object state) [0x0026e] in <8ffa02eb4d0640189224b47729113681>:0 
+========================================
+
+20.11.2019 13:15:47.516 PUBLISH #6 RECEIVED
+20.11.2019 13:15:47.546 NOTIFICATION RECEIVED: SubId=69, SeqNo=5
+20.11.2019 13:15:47.565 PUBLISH #7 SENT
+20.11.2019 13:15:47.568 NotificationReceived: ClientHandle=4, Value=0.625259937809977
+20.11.2019 13:15:47.617 Error while processing incoming message #5. InvalidCastException 'Specified cast is not valid.'
+
+========================================
+Id: Bad
+Description: Specified cast is not valid.
+>>> Specified cast is not valid.
+---   at OPC_ConsoleClient+MyClient.OnNotification (Opc.Ua.Client.MonitoredItem item, Opc.Ua.Client.MonitoredItemNotificationEventArgs e) [0x0001b] in C:\Users\kami\work\Unity\FactoryServusreal\Assets\OPC_ConsoleClient.cs:246 
+---   at Opc.Ua.Client.MonitoredItem.SaveValueInCache (Opc.Ua.IEncodeable newValue) [0x001db] in <8ffa02eb4d0640189224b47729113681>:0 
+---   at Opc.Ua.Client.Subscription.SaveDataChange (Opc.Ua.NotificationMessage message, Opc.Ua.DataChangeNotification notifications, System.Collections.Generic.IList`1[T] stringTable) [0x000f9] in <8ffa02eb4d0640189224b47729113681>:0 
+---   at Opc.Ua.Client.Subscription.OnMessageReceived (System.Object state) [0x0026e] in <8ffa02eb4d0640189224b47729113681>:0 
+========================================
+
+20.11.2019 13:15:47.743 PUBLISH #7 RECEIVED
+20.11.2019 13:15:47.760 NOTIFICATION RECEIVED: SubId=69, SeqNo=6
+20.11.2019 13:15:47.784 PUBLISH #8 SENT
+20.11.2019 13:15:47.787 NotificationReceived: ClientHandle=4, Value=0.921983325188602
+20.11.2019 13:15:47.827 Error while processing incoming message #6. InvalidCastException 'Specified cast is not valid.'
+
+========================================
+Id: Bad
+Description: Specified cast is not valid.
+>>> Specified cast is not valid.
+---   at OPC_ConsoleClient+MyClient.OnNotification (Opc.Ua.Client.MonitoredItem item, Opc.Ua.Client.MonitoredItemNotificationEventArgs e) [0x0001b] in C:\Users\kami\work\Unity\FactoryServusreal\Assets\OPC_ConsoleClient.cs:246 
+---   at Opc.Ua.Client.MonitoredItem.SaveValueInCache (Opc.Ua.IEncodeable newValue) [0x001db] in <8ffa02eb4d0640189224b47729113681>:0 
+---   at Opc.Ua.Client.Subscription.SaveDataChange (Opc.Ua.NotificationMessage message, Opc.Ua.DataChangeNotification notifications, System.Collections.Generic.IList`1[T] stringTable) [0x000f9] in <8ffa02eb4d0640189224b47729113681>:0 
+---   at Opc.Ua.Client.Subscription.OnMessageReceived (System.Object state) [0x0026e] in <8ffa02eb4d0640189224b47729113681>:0 
+========================================
+
+20.11.2019 13:15:47.961 PUBLISH #8 RECEIVED
+20.11.2019 13:15:47.982 NOTIFICATION RECEIVED: SubId=69, SeqNo=7
+20.11.2019 13:15:48.013 PUBLISH #9 SENT
+20.11.2019 13:15:48.015 NotificationReceived: ClientHandle=4, Value=0.20228373328872
+20.11.2019 13:15:48.068 Error while processing incoming message #7. InvalidCastException 'Specified cast is not valid.'
+
+========================================
+Id: Bad
+Description: Specified cast is not valid.
+>>> Specified cast is not valid.
+---   at OPC_ConsoleClient+MyClient.OnNotification (Opc.Ua.Client.MonitoredItem item, Opc.Ua.Client.MonitoredItemNotificationEventArgs e) [0x0001b] in C:\Users\kami\work\Unity\FactoryServusreal\Assets\OPC_ConsoleClient.cs:246 
+---   at Opc.Ua.Client.MonitoredItem.SaveValueInCache (Opc.Ua.IEncodeable newValue) [0x001db] in <8ffa02eb4d0640189224b47729113681>:0 
+---   at Opc.Ua.Client.Subscription.SaveDataChange (Opc.Ua.NotificationMessage message, Opc.Ua.DataChangeNotification notifications, System.Collections.Generic.IList`1[T] stringTable) [0x000f9] in <8ffa02eb4d0640189224b47729113681>:0 
+---   at Opc.Ua.Client.Subscription.OnMessageReceived (System.Object state) [0x0026e] in <8ffa02eb4d0640189224b47729113681>:0 
+========================================
+
+20.11.2019 13:15:48.194 PUBLISH #9 RECEIVED
+20.11.2019 13:15:48.223 NOTIFICATION RECEIVED: SubId=69, SeqNo=8
+20.11.2019 13:15:48.242 PUBLISH #10 SENT
+20.11.2019 13:15:48.244 NotificationReceived: ClientHandle=4, Value=0.100969098393326
+20.11.2019 13:15:48.283 Error while processing incoming message #8. InvalidCastException 'Specified cast is not valid.'
+
+========================================
+Id: Bad
+Description: Specified cast is not valid.
+>>> Specified cast is not valid.
+---   at OPC_ConsoleClient+MyClient.OnNotification (Opc.Ua.Client.MonitoredItem item, Opc.Ua.Client.MonitoredItemNotificationEventArgs e) [0x0001b] in C:\Users\kami\work\Unity\FactoryServusreal\Assets\OPC_ConsoleClient.cs:246 
+---   at Opc.Ua.Client.MonitoredItem.SaveValueInCache (Opc.Ua.IEncodeable newValue) [0x001db] in <8ffa02eb4d0640189224b47729113681>:0 
+---   at Opc.Ua.Client.Subscription.SaveDataChange (Opc.Ua.NotificationMessage message, Opc.Ua.DataChangeNotification notifications, System.Collections.Generic.IList`1[T] stringTable) [0x000f9] in <8ffa02eb4d0640189224b47729113681>:0 
+---   at Opc.Ua.Client.Subscription.OnMessageReceived (System.Object state) [0x0026e] in <8ffa02eb4d0640189224b47729113681>:0 
+========================================
+
+20.11.2019 13:15:48.419 PUBLISH #10 RECEIVED
+20.11.2019 13:15:48.445 NOTIFICATION RECEIVED: SubId=69, SeqNo=9
+20.11.2019 13:15:48.469 PUBLISH #11 SENT
+20.11.2019 13:15:48.471 NotificationReceived: ClientHandle=4, Value=0.864424534847721
+20.11.2019 13:15:48.510 Error while processing incoming message #9. InvalidCastException 'Specified cast is not valid.'
+
+========================================
+Id: Bad
+Description: Specified cast is not valid.
+>>> Specified cast is not valid.
+---   at OPC_ConsoleClient+MyClient.OnNotification (Opc.Ua.Client.MonitoredItem item, Opc.Ua.Client.MonitoredItemNotificationEventArgs e) [0x0001b] in C:\Users\kami\work\Unity\FactoryServusreal\Assets\OPC_ConsoleClient.cs:246 
+---   at Opc.Ua.Client.MonitoredItem.SaveValueInCache (Opc.Ua.IEncodeable newValue) [0x001db] in <8ffa02eb4d0640189224b47729113681>:0 
+---   at Opc.Ua.Client.Subscription.SaveDataChange (Opc.Ua.NotificationMessage message, Opc.Ua.DataChangeNotification notifications, System.Collections.Generic.IList`1[T] stringTable) [0x000f9] in <8ffa02eb4d0640189224b47729113681>:0 
+---   at Opc.Ua.Client.Subscription.OnMessageReceived (System.Object state) [0x0026e] in <8ffa02eb4d0640189224b47729113681>:0 
+========================================
+
+20.11.2019 13:15:48.648 PUBLISH #11 RECEIVED
+20.11.2019 13:15:48.674 NOTIFICATION RECEIVED: SubId=69, SeqNo=10
+20.11.2019 13:15:48.706 PUBLISH #12 SENT
+20.11.2019 13:15:48.709 NotificationReceived: ClientHandle=4, Value=0.303044314159556
+20.11.2019 13:15:48.788 Error while processing incoming message #10. InvalidCastException 'Specified cast is not valid.'
+
+========================================
+Id: Bad
+Description: Specified cast is not valid.
+>>> Specified cast is not valid.
+---   at OPC_ConsoleClient+MyClient.OnNotification (Opc.Ua.Client.MonitoredItem item, Opc.Ua.Client.MonitoredItemNotificationEventArgs e) [0x0001b] in C:\Users\kami\work\Unity\FactoryServusreal\Assets\OPC_ConsoleClient.cs:246 
+---   at Opc.Ua.Client.MonitoredItem.SaveValueInCache (Opc.Ua.IEncodeable newValue) [0x001db] in <8ffa02eb4d0640189224b47729113681>:0 
+---   at Opc.Ua.Client.Subscription.SaveDataChange (Opc.Ua.NotificationMessage message, Opc.Ua.DataChangeNotification notifications, System.Collections.Generic.IList`1[T] stringTable) [0x000f9] in <8ffa02eb4d0640189224b47729113681>:0 
+---   at Opc.Ua.Client.Subscription.OnMessageReceived (System.Object state) [0x0026e] in <8ffa02eb4d0640189224b47729113681>:0 
+========================================
+
+20.11.2019 13:15:48.893 PUBLISH #12 RECEIVED
+20.11.2019 13:15:48.919 NOTIFICATION RECEIVED: SubId=69, SeqNo=11
+20.11.2019 13:15:48.958 PUBLISH #13 SENT
+20.11.2019 13:15:48.960 NotificationReceived: ClientHandle=4, Value=0.631210174289423
+20.11.2019 13:15:49.048 Error while processing incoming message #11. InvalidCastException 'Specified cast is not valid.'
+
+========================================
+Id: Bad
+Description: Specified cast is not valid.
+>>> Specified cast is not valid.
+---   at OPC_ConsoleClient+MyClient.OnNotification (Opc.Ua.Client.MonitoredItem item, Opc.Ua.Client.MonitoredItemNotificationEventArgs e) [0x0001b] in C:\Users\kami\work\Unity\FactoryServusreal\Assets\OPC_ConsoleClient.cs:246 
+---   at Opc.Ua.Client.MonitoredItem.SaveValueInCache (Opc.Ua.IEncodeable newValue) [0x001db] in <8ffa02eb4d0640189224b47729113681>:0 
+---   at Opc.Ua.Client.Subscription.SaveDataChange (Opc.Ua.NotificationMessage message, Opc.Ua.DataChangeNotification notifications, System.Collections.Generic.IList`1[T] stringTable) [0x000f9] in <8ffa02eb4d0640189224b47729113681>:0 
+---   at Opc.Ua.Client.Subscription.OnMessageReceived (System.Object state) [0x0026e] in <8ffa02eb4d0640189224b47729113681>:0 
+========================================
+
+20.11.2019 13:15:49.254 PUBLISH #13 RECEIVED
+20.11.2019 13:15:49.277 NOTIFICATION RECEIVED: SubId=69, SeqNo=12
+20.11.2019 13:15:49.311 PUBLISH #14 SENT
+20.11.2019 13:15:49.313 NotificationReceived: ClientHandle=4, Value=0.20050015626777
+20.11.2019 13:15:49.368 Error while processing incoming message #12. InvalidCastException 'Specified cast is not valid.'
+
+========================================
+Id: Bad
+Description: Specified cast is not valid.
+>>> Specified cast is not valid.
+---   at OPC_ConsoleClient+MyClient.OnNotification (Opc.Ua.Client.MonitoredItem item, Opc.Ua.Client.MonitoredItemNotificationEventArgs e) [0x0001b] in C:\Users\kami\work\Unity\FactoryServusreal\Assets\OPC_ConsoleClient.cs:246 
+---   at Opc.Ua.Client.MonitoredItem.SaveValueInCache (Opc.Ua.IEncodeable newValue) [0x001db] in <8ffa02eb4d0640189224b47729113681>:0 
+---   at Opc.Ua.Client.Subscription.SaveDataChange (Opc.Ua.NotificationMessage message, Opc.Ua.DataChangeNotification notifications, System.Collections.Generic.IList`1[T] stringTable) [0x000f9] in <8ffa02eb4d0640189224b47729113681>:0 
+---   at Opc.Ua.Client.Subscription.OnMessageReceived (System.Object state) [0x0026e] in <8ffa02eb4d0640189224b47729113681>:0 
+========================================
+
+20.11.2019 13:15:49.506 PUBLISH #14 RECEIVED
+20.11.2019 13:15:49.536 NOTIFICATION RECEIVED: SubId=69, SeqNo=13
+20.11.2019 13:15:49.564 PUBLISH #15 SENT
+20.11.2019 13:15:49.567 NotificationReceived: ClientHandle=4, Value=0.510855742492548
+20.11.2019 13:15:49.615 Error while processing incoming message #13. InvalidCastException 'Specified cast is not valid.'
+
+========================================
+Id: Bad
+Description: Specified cast is not valid.
+>>> Specified cast is not valid.
+---   at OPC_ConsoleClient+MyClient.OnNotification (Opc.Ua.Client.MonitoredItem item, Opc.Ua.Client.MonitoredItemNotificationEventArgs e) [0x0001b] in C:\Users\kami\work\Unity\FactoryServusreal\Assets\OPC_ConsoleClient.cs:246 
+---   at Opc.Ua.Client.MonitoredItem.SaveValueInCache (Opc.Ua.IEncodeable newValue) [0x001db] in <8ffa02eb4d0640189224b47729113681>:0 
+---   at Opc.Ua.Client.Subscription.SaveDataChange (Opc.Ua.NotificationMessage message, Opc.Ua.DataChangeNotification notifications, System.Collections.Generic.IList`1[T] stringTable) [0x000f9] in <8ffa02eb4d0640189224b47729113681>:0 
+---   at Opc.Ua.Client.Subscription.OnMessageReceived (System.Object state) [0x0026e] in <8ffa02eb4d0640189224b47729113681>:0 
+========================================
+
+20.11.2019 13:15:49.741 PUBLISH #15 RECEIVED
+20.11.2019 13:15:49.765 NOTIFICATION RECEIVED: SubId=69, SeqNo=14
+20.11.2019 13:15:49.793 PUBLISH #16 SENT
+20.11.2019 13:15:49.797 NotificationReceived: ClientHandle=4, Value=0.162515380756303
+20.11.2019 13:15:49.847 Error while processing incoming message #14. InvalidCastException 'Specified cast is not valid.'
+
+========================================
+Id: Bad
+Description: Specified cast is not valid.
+>>> Specified cast is not valid.
+---   at OPC_ConsoleClient+MyClient.OnNotification (Opc.Ua.Client.MonitoredItem item, Opc.Ua.Client.MonitoredItemNotificationEventArgs e) [0x0001b] in C:\Users\kami\work\Unity\FactoryServusreal\Assets\OPC_ConsoleClient.cs:246 
+---   at Opc.Ua.Client.MonitoredItem.SaveValueInCache (Opc.Ua.IEncodeable newValue) [0x001db] in <8ffa02eb4d0640189224b47729113681>:0 
+---   at Opc.Ua.Client.Subscription.SaveDataChange (Opc.Ua.NotificationMessage message, Opc.Ua.DataChangeNotification notifications, System.Collections.Generic.IList`1[T] stringTable) [0x000f9] in <8ffa02eb4d0640189224b47729113681>:0 
+---   at Opc.Ua.Client.Subscription.OnMessageReceived (System.Object state) [0x0026e] in <8ffa02eb4d0640189224b47729113681>:0 
+========================================
+
+20.11.2019 13:15:49.971 PUBLISH #16 RECEIVED
+20.11.2019 13:15:49.998 NOTIFICATION RECEIVED: SubId=69, SeqNo=15
+20.11.2019 13:15:50.018 PUBLISH #17 SENT
+20.11.2019 13:15:50.024 NotificationReceived: ClientHandle=4, Value=0.232434061596374
+20.11.2019 13:15:50.084 Error while processing incoming message #15. InvalidCastException 'Specified cast is not valid.'
+
+========================================
+Id: Bad
+Description: Specified cast is not valid.
+>>> Specified cast is not valid.
+---   at OPC_ConsoleClient+MyClient.OnNotification (Opc.Ua.Client.MonitoredItem item, Opc.Ua.Client.MonitoredItemNotificationEventArgs e) [0x0001b] in C:\Users\kami\work\Unity\FactoryServusreal\Assets\OPC_ConsoleClient.cs:246 
+---   at Opc.Ua.Client.MonitoredItem.SaveValueInCache (Opc.Ua.IEncodeable newValue) [0x001db] in <8ffa02eb4d0640189224b47729113681>:0 
+---   at Opc.Ua.Client.Subscription.SaveDataChange (Opc.Ua.NotificationMessage message, Opc.Ua.DataChangeNotification notifications, System.Collections.Generic.IList`1[T] stringTable) [0x000f9] in <8ffa02eb4d0640189224b47729113681>:0 
+---   at Opc.Ua.Client.Subscription.OnMessageReceived (System.Object state) [0x0026e] in <8ffa02eb4d0640189224b47729113681>:0 
+========================================
+
+20.11.2019 13:15:50.196 PUBLISH #17 RECEIVED
+20.11.2019 13:15:50.222 NOTIFICATION RECEIVED: SubId=69, SeqNo=16
+20.11.2019 13:15:50.253 PUBLISH #18 SENT
+20.11.2019 13:15:50.255 NotificationReceived: ClientHandle=4, Value=0.622469198684864
+20.11.2019 13:15:50.314 Error while processing incoming message #16. InvalidCastException 'Specified cast is not valid.'
+
+========================================
+Id: Bad
+Description: Specified cast is not valid.
+>>> Specified cast is not valid.
+---   at OPC_ConsoleClient+MyClient.OnNotification (Opc.Ua.Client.MonitoredItem item, Opc.Ua.Client.MonitoredItemNotificationEventArgs e) [0x0001b] in C:\Users\kami\work\Unity\FactoryServusreal\Assets\OPC_ConsoleClient.cs:246 
+---   at Opc.Ua.Client.MonitoredItem.SaveValueInCache (Opc.Ua.IEncodeable newValue) [0x001db] in <8ffa02eb4d0640189224b47729113681>:0 
+---   at Opc.Ua.Client.Subscription.SaveDataChange (Opc.Ua.NotificationMessage message, Opc.Ua.DataChangeNotification notifications, System.Collections.Generic.IList`1[T] stringTable) [0x000f9] in <8ffa02eb4d0640189224b47729113681>:0 
+---   at Opc.Ua.Client.Subscription.OnMessageReceived (System.Object state) [0x0026e] in <8ffa02eb4d0640189224b47729113681>:0 
+========================================
+
+20.11.2019 13:15:50.431 PUBLISH #18 RECEIVED
+20.11.2019 13:15:50.473 NOTIFICATION RECEIVED: SubId=69, SeqNo=17
+20.11.2019 13:15:50.509 PUBLISH #19 SENT
+20.11.2019 13:15:50.512 NotificationReceived: ClientHandle=4, Value=0.419167023092475
+20.11.2019 13:15:50.578 Error while processing incoming message #17. InvalidCastException 'Specified cast is not valid.'
+
+========================================
+Id: Bad
+Description: Specified cast is not valid.
+>>> Specified cast is not valid.
+---   at OPC_ConsoleClient+MyClient.OnNotification (Opc.Ua.Client.MonitoredItem item, Opc.Ua.Client.MonitoredItemNotificationEventArgs e) [0x0001b] in C:\Users\kami\work\Unity\FactoryServusreal\Assets\OPC_ConsoleClient.cs:246 
+---   at Opc.Ua.Client.MonitoredItem.SaveValueInCache (Opc.Ua.IEncodeable newValue) [0x001db] in <8ffa02eb4d0640189224b47729113681>:0 
+---   at Opc.Ua.Client.Subscription.SaveDataChange (Opc.Ua.NotificationMessage message, Opc.Ua.DataChangeNotification notifications, System.Collections.Generic.IList`1[T] stringTable) [0x000f9] in <8ffa02eb4d0640189224b47729113681>:0 
+---   at Opc.Ua.Client.Subscription.OnMessageReceived (System.Object state) [0x0026e] in <8ffa02eb4d0640189224b47729113681>:0 
+========================================
+
+20.11.2019 13:15:50.689 PUBLISH #19 RECEIVED
+20.11.2019 13:15:50.728 NOTIFICATION RECEIVED: SubId=69, SeqNo=18
+20.11.2019 13:15:50.763 PUBLISH #20 SENT
+20.11.2019 13:15:50.765 NotificationReceived: ClientHandle=4, Value=0.649389818743482
+20.11.2019 13:15:50.825 Error while processing incoming message #18. InvalidCastException 'Specified cast is not valid.'
+
+========================================
+Id: Bad
+Description: Specified cast is not valid.
+>>> Specified cast is not valid.
+---   at OPC_ConsoleClient+MyClient.OnNotification (Opc.Ua.Client.MonitoredItem item, Opc.Ua.Client.MonitoredItemNotificationEventArgs e) [0x0001b] in C:\Users\kami\work\Unity\FactoryServusreal\Assets\OPC_ConsoleClient.cs:246 
+---   at Opc.Ua.Client.MonitoredItem.SaveValueInCache (Opc.Ua.IEncodeable newValue) [0x001db] in <8ffa02eb4d0640189224b47729113681>:0 
+---   at Opc.Ua.Client.Subscription.SaveDataChange (Opc.Ua.NotificationMessage message, Opc.Ua.DataChangeNotification notifications, System.Collections.Generic.IList`1[T] stringTable) [0x000f9] in <8ffa02eb4d0640189224b47729113681>:0 
+---   at Opc.Ua.Client.Subscription.OnMessageReceived (System.Object state) [0x0026e] in <8ffa02eb4d0640189224b47729113681>:0 
+========================================
+
+20.11.2019 13:15:50.941 PUBLISH #20 RECEIVED
+20.11.2019 13:15:50.969 NOTIFICATION RECEIVED: SubId=69, SeqNo=19
+20.11.2019 13:15:51.000 PUBLISH #21 SENT
+20.11.2019 13:15:51.004 NotificationReceived: ClientHandle=4, Value=0.0271827756108148
+20.11.2019 13:15:51.069 Error while processing incoming message #19. InvalidCastException 'Specified cast is not valid.'
+
+========================================
+Id: Bad
+Description: Specified cast is not valid.
+>>> Specified cast is not valid.
+---   at OPC_ConsoleClient+MyClient.OnNotification (Opc.Ua.Client.MonitoredItem item, Opc.Ua.Client.MonitoredItemNotificationEventArgs e) [0x0001b] in C:\Users\kami\work\Unity\FactoryServusreal\Assets\OPC_ConsoleClient.cs:246 
+---   at Opc.Ua.Client.MonitoredItem.SaveValueInCache (Opc.Ua.IEncodeable newValue) [0x001db] in <8ffa02eb4d0640189224b47729113681>:0 
+---   at Opc.Ua.Client.Subscription.SaveDataChange (Opc.Ua.NotificationMessage message, Opc.Ua.DataChangeNotification notifications, System.Collections.Generic.IList`1[T] stringTable) [0x000f9] in <8ffa02eb4d0640189224b47729113681>:0 
+---   at Opc.Ua.Client.Subscription.OnMessageReceived (System.Object state) [0x0026e] in <8ffa02eb4d0640189224b47729113681>:0 
+========================================
+
+20.11.2019 13:15:51.181 PUBLISH #21 RECEIVED
+20.11.2019 13:15:51.212 NOTIFICATION RECEIVED: SubId=69, SeqNo=20
+20.11.2019 13:15:51.243 PUBLISH #22 SENT
+20.11.2019 13:15:51.247 NotificationReceived: ClientHandle=4, Value=0.827965185938472
+20.11.2019 13:15:51.317 Error while processing incoming message #20. InvalidCastException 'Specified cast is not valid.'
+
+========================================
+Id: Bad
+Description: Specified cast is not valid.
+>>> Specified cast is not valid.
+---   at OPC_ConsoleClient+MyClient.OnNotification (Opc.Ua.Client.MonitoredItem item, Opc.Ua.Client.MonitoredItemNotificationEventArgs e) [0x0001b] in C:\Users\kami\work\Unity\FactoryServusreal\Assets\OPC_ConsoleClient.cs:246 
+---   at Opc.Ua.Client.MonitoredItem.SaveValueInCache (Opc.Ua.IEncodeable newValue) [0x001db] in <8ffa02eb4d0640189224b47729113681>:0 
+---   at Opc.Ua.Client.Subscription.SaveDataChange (Opc.Ua.NotificationMessage message, Opc.Ua.DataChangeNotification notifications, System.Collections.Generic.IList`1[T] stringTable) [0x000f9] in <8ffa02eb4d0640189224b47729113681>:0 
+---   at Opc.Ua.Client.Subscription.OnMessageReceived (System.Object state) [0x0026e] in <8ffa02eb4d0640189224b47729113681>:0 
+========================================
+
+20.11.2019 13:15:51.421 PUBLISH #22 RECEIVED
+20.11.2019 13:15:51.453 NOTIFICATION RECEIVED: SubId=69, SeqNo=21
+20.11.2019 13:15:51.491 PUBLISH #23 SENT
+20.11.2019 13:15:51.493 NotificationReceived: ClientHandle=4, Value=0.758931389809539
+20.11.2019 13:15:51.562 Error while processing incoming message #21. InvalidCastException 'Specified cast is not valid.'
+
+========================================
+Id: Bad
+Description: Specified cast is not valid.
+>>> Specified cast is not valid.
+---   at OPC_ConsoleClient+MyClient.OnNotification (Opc.Ua.Client.MonitoredItem item, Opc.Ua.Client.MonitoredItemNotificationEventArgs e) [0x0001b] in C:\Users\kami\work\Unity\FactoryServusreal\Assets\OPC_ConsoleClient.cs:246 
+---   at Opc.Ua.Client.MonitoredItem.SaveValueInCache (Opc.Ua.IEncodeable newValue) [0x001db] in <8ffa02eb4d0640189224b47729113681>:0 
+---   at Opc.Ua.Client.Subscription.SaveDataChange (Opc.Ua.NotificationMessage message, Opc.Ua.DataChangeNotification notifications, System.Collections.Generic.IList`1[T] stringTable) [0x000f9] in <8ffa02eb4d0640189224b47729113681>:0 
+---   at Opc.Ua.Client.Subscription.OnMessageReceived (System.Object state) [0x0026e] in <8ffa02eb4d0640189224b47729113681>:0 
+========================================
+
+20.11.2019 13:15:51.669 PUBLISH #23 RECEIVED
+20.11.2019 13:15:51.713 NOTIFICATION RECEIVED: SubId=69, SeqNo=22
+20.11.2019 13:15:51.748 PUBLISH #24 SENT
+20.11.2019 13:15:51.753 NotificationReceived: ClientHandle=4, Value=0.076651445059928
+20.11.2019 13:15:51.814 Error while processing incoming message #22. InvalidCastException 'Specified cast is not valid.'
+
+========================================
+Id: Bad
+Description: Specified cast is not valid.
+>>> Specified cast is not valid.
+---   at OPC_ConsoleClient+MyClient.OnNotification (Opc.Ua.Client.MonitoredItem item, Opc.Ua.Client.MonitoredItemNotificationEventArgs e) [0x0001b] in C:\Users\kami\work\Unity\FactoryServusreal\Assets\OPC_ConsoleClient.cs:246 
+---   at Opc.Ua.Client.MonitoredItem.SaveValueInCache (Opc.Ua.IEncodeable newValue) [0x001db] in <8ffa02eb4d0640189224b47729113681>:0 
+---   at Opc.Ua.Client.Subscription.SaveDataChange (Opc.Ua.NotificationMessage message, Opc.Ua.DataChangeNotification notifications, System.Collections.Generic.IList`1[T] stringTable) [0x000f9] in <8ffa02eb4d0640189224b47729113681>:0 
+---   at Opc.Ua.Client.Subscription.OnMessageReceived (System.Object state) [0x0026e] in <8ffa02eb4d0640189224b47729113681>:0 
+========================================
+
+20.11.2019 13:15:51.927 PUBLISH #24 RECEIVED
+20.11.2019 13:15:51.963 NOTIFICATION RECEIVED: SubId=69, SeqNo=23
+20.11.2019 13:15:52.015 PUBLISH #25 SENT
+20.11.2019 13:15:52.022 NotificationReceived: ClientHandle=4, Value=0.945397982000406
+20.11.2019 13:15:52.106 Error while processing incoming message #23. InvalidCastException 'Specified cast is not valid.'
+
+========================================
+Id: Bad
+Description: Specified cast is not valid.
+>>> Specified cast is not valid.
+---   at OPC_ConsoleClient+MyClient.OnNotification (Opc.Ua.Client.MonitoredItem item, Opc.Ua.Client.MonitoredItemNotificationEventArgs e) [0x0001b] in C:\Users\kami\work\Unity\FactoryServusreal\Assets\OPC_ConsoleClient.cs:246 
+---   at Opc.Ua.Client.MonitoredItem.SaveValueInCache (Opc.Ua.IEncodeable newValue) [0x001db] in <8ffa02eb4d0640189224b47729113681>:0 
+---   at Opc.Ua.Client.Subscription.SaveDataChange (Opc.Ua.NotificationMessage message, Opc.Ua.DataChangeNotification notifications, System.Collections.Generic.IList`1[T] stringTable) [0x000f9] in <8ffa02eb4d0640189224b47729113681>:0 
+---   at Opc.Ua.Client.Subscription.OnMessageReceived (System.Object state) [0x0026e] in <8ffa02eb4d0640189224b47729113681>:0 
+========================================
+
+20.11.2019 13:15:52.194 PUBLISH #25 RECEIVED
+20.11.2019 13:15:52.244 NOTIFICATION RECEIVED: SubId=69, SeqNo=24
+20.11.2019 13:15:52.295 PUBLISH #26 SENT
+20.11.2019 13:15:52.304 NotificationReceived: ClientHandle=4, Value=0.50509899291266
+20.11.2019 13:15:52.387 Error while processing incoming message #24. InvalidCastException 'Specified cast is not valid.'
+
+========================================
+Id: Bad
+Description: Specified cast is not valid.
+>>> Specified cast is not valid.
+---   at OPC_ConsoleClient+MyClient.OnNotification (Opc.Ua.Client.MonitoredItem item, Opc.Ua.Client.MonitoredItemNotificationEventArgs e) [0x0001b] in C:\Users\kami\work\Unity\FactoryServusreal\Assets\OPC_ConsoleClient.cs:246 
+---   at Opc.Ua.Client.MonitoredItem.SaveValueInCache (Opc.Ua.IEncodeable newValue) [0x001db] in <8ffa02eb4d0640189224b47729113681>:0 
+---   at Opc.Ua.Client.Subscription.SaveDataChange (Opc.Ua.NotificationMessage message, Opc.Ua.DataChangeNotification notifications, System.Collections.Generic.IList`1[T] stringTable) [0x000f9] in <8ffa02eb4d0640189224b47729113681>:0 
+---   at Opc.Ua.Client.Subscription.OnMessageReceived (System.Object state) [0x0026e] in <8ffa02eb4d0640189224b47729113681>:0 
+========================================
+
+20.11.2019 13:15:52.474 PUBLISH #26 RECEIVED
+20.11.2019 13:15:52.530 NOTIFICATION RECEIVED: SubId=69, SeqNo=25
+20.11.2019 13:15:52.576 PUBLISH #27 SENT
+20.11.2019 13:15:52.581 NotificationReceived: ClientHandle=4, Value=0.094713231241891
+20.11.2019 13:15:52.649 Error while processing incoming message #25. InvalidCastException 'Specified cast is not valid.'
+
+========================================
+Id: Bad
+Description: Specified cast is not valid.
+>>> Specified cast is not valid.
+---   at OPC_ConsoleClient+MyClient.OnNotification (Opc.Ua.Client.MonitoredItem item, Opc.Ua.Client.MonitoredItemNotificationEventArgs e) [0x0001b] in C:\Users\kami\work\Unity\FactoryServusreal\Assets\OPC_ConsoleClient.cs:246 
+---   at Opc.Ua.Client.MonitoredItem.SaveValueInCache (Opc.Ua.IEncodeable newValue) [0x001db] in <8ffa02eb4d0640189224b47729113681>:0 
+---   at Opc.Ua.Client.Subscription.SaveDataChange (Opc.Ua.NotificationMessage message, Opc.Ua.DataChangeNotification notifications, System.Collections.Generic.IList`1[T] stringTable) [0x000f9] in <8ffa02eb4d0640189224b47729113681>:0 
+---   at Opc.Ua.Client.Subscription.OnMessageReceived (System.Object state) [0x0026e] in <8ffa02eb4d0640189224b47729113681>:0 
+========================================
+
+20.11.2019 13:15:52.756 PUBLISH #27 RECEIVED
+20.11.2019 13:15:52.791 NOTIFICATION RECEIVED: SubId=69, SeqNo=26
+20.11.2019 13:15:52.831 PUBLISH #28 SENT
+20.11.2019 13:15:52.837 NotificationReceived: ClientHandle=4, Value=0.934605198190368
+20.11.2019 13:15:52.906 Error while processing incoming message #26. InvalidCastException 'Specified cast is not valid.'
+
+========================================
+Id: Bad
+Description: Specified cast is not valid.
+>>> Specified cast is not valid.
+---   at OPC_ConsoleClient+MyClient.OnNotification (Opc.Ua.Client.MonitoredItem item, Opc.Ua.Client.MonitoredItemNotificationEventArgs e) [0x0001b] in C:\Users\kami\work\Unity\FactoryServusreal\Assets\OPC_ConsoleClient.cs:246 
+---   at Opc.Ua.Client.MonitoredItem.SaveValueInCache (Opc.Ua.IEncodeable newValue) [0x001db] in <8ffa02eb4d0640189224b47729113681>:0 
+---   at Opc.Ua.Client.Subscription.SaveDataChange (Opc.Ua.NotificationMessage message, Opc.Ua.DataChangeNotification notifications, System.Collections.Generic.IList`1[T] stringTable) [0x000f9] in <8ffa02eb4d0640189224b47729113681>:0 
+---   at Opc.Ua.Client.Subscription.OnMessageReceived (System.Object state) [0x0026e] in <8ffa02eb4d0640189224b47729113681>:0 
+========================================
+
+20.11.2019 13:15:53.008 PUBLISH #28 RECEIVED
+20.11.2019 13:15:53.051 NOTIFICATION RECEIVED: SubId=69, SeqNo=27
+20.11.2019 13:15:53.088 PUBLISH #29 SENT
+20.11.2019 13:15:53.096 NotificationReceived: ClientHandle=4, Value=0.442624283666988
+20.11.2019 13:15:53.161 Error while processing incoming message #27. InvalidCastException 'Specified cast is not valid.'
+
+========================================
+Id: Bad
+Description: Specified cast is not valid.
+>>> Specified cast is not valid.
+---   at OPC_ConsoleClient+MyClient.OnNotification (Opc.Ua.Client.MonitoredItem item, Opc.Ua.Client.MonitoredItemNotificationEventArgs e) [0x0001b] in C:\Users\kami\work\Unity\FactoryServusreal\Assets\OPC_ConsoleClient.cs:246 
+---   at Opc.Ua.Client.MonitoredItem.SaveValueInCache (Opc.Ua.IEncodeable newValue) [0x001db] in <8ffa02eb4d0640189224b47729113681>:0 
+---   at Opc.Ua.Client.Subscription.SaveDataChange (Opc.Ua.NotificationMessage message, Opc.Ua.DataChangeNotification notifications, System.Collections.Generic.IList`1[T] stringTable) [0x000f9] in <8ffa02eb4d0640189224b47729113681>:0 
+---   at Opc.Ua.Client.Subscription.OnMessageReceived (System.Object state) [0x0026e] in <8ffa02eb4d0640189224b47729113681>:0 
+========================================
+
+20.11.2019 13:15:53.264 PUBLISH #29 RECEIVED
+20.11.2019 13:15:53.298 NOTIFICATION RECEIVED: SubId=69, SeqNo=28
+20.11.2019 13:15:53.335 PUBLISH #30 SENT
+20.11.2019 13:15:53.340 NotificationReceived: ClientHandle=4, Value=0.507607257030278
+20.11.2019 13:15:53.400 Error while processing incoming message #28. InvalidCastException 'Specified cast is not valid.'
+
+========================================
+Id: Bad
+Description: Specified cast is not valid.
+>>> Specified cast is not valid.
+---   at OPC_ConsoleClient+MyClient.OnNotification (Opc.Ua.Client.MonitoredItem item, Opc.Ua.Client.MonitoredItemNotificationEventArgs e) [0x0001b] in C:\Users\kami\work\Unity\FactoryServusreal\Assets\OPC_ConsoleClient.cs:246 
+---   at Opc.Ua.Client.MonitoredItem.SaveValueInCache (Opc.Ua.IEncodeable newValue) [0x001db] in <8ffa02eb4d0640189224b47729113681>:0 
+---   at Opc.Ua.Client.Subscription.SaveDataChange (Opc.Ua.NotificationMessage message, Opc.Ua.DataChangeNotification notifications, System.Collections.Generic.IList`1[T] stringTable) [0x000f9] in <8ffa02eb4d0640189224b47729113681>:0 
+---   at Opc.Ua.Client.Subscription.OnMessageReceived (System.Object state) [0x0026e] in <8ffa02eb4d0640189224b47729113681>:0 
+========================================
+
+20.11.2019 13:15:53.515 PUBLISH #30 RECEIVED
+20.11.2019 13:15:53.551 NOTIFICATION RECEIVED: SubId=69, SeqNo=29
+20.11.2019 13:15:53.593 PUBLISH #31 SENT
+20.11.2019 13:15:53.597 NotificationReceived: ClientHandle=4, Value=0.378391510398972
+20.11.2019 13:15:53.656 Error while processing incoming message #29. InvalidCastException 'Specified cast is not valid.'
+
+========================================
+Id: Bad
+Description: Specified cast is not valid.
+>>> Specified cast is not valid.
+---   at OPC_ConsoleClient+MyClient.OnNotification (Opc.Ua.Client.MonitoredItem item, Opc.Ua.Client.MonitoredItemNotificationEventArgs e) [0x0001b] in C:\Users\kami\work\Unity\FactoryServusreal\Assets\OPC_ConsoleClient.cs:246 
+---   at Opc.Ua.Client.MonitoredItem.SaveValueInCache (Opc.Ua.IEncodeable newValue) [0x001db] in <8ffa02eb4d0640189224b47729113681>:0 
+---   at Opc.Ua.Client.Subscription.SaveDataChange (Opc.Ua.NotificationMessage message, Opc.Ua.DataChangeNotification notifications, System.Collections.Generic.IList`1[T] stringTable) [0x000f9] in <8ffa02eb4d0640189224b47729113681>:0 
+---   at Opc.Ua.Client.Subscription.OnMessageReceived (System.Object state) [0x0026e] in <8ffa02eb4d0640189224b47729113681>:0 
+========================================
+
+20.11.2019 13:15:53.773 PUBLISH #31 RECEIVED
+20.11.2019 13:15:53.819 NOTIFICATION RECEIVED: SubId=69, SeqNo=30
+20.11.2019 13:15:53.883 PUBLISH #32 SENT
+20.11.2019 13:15:53.888 NotificationReceived: ClientHandle=4, Value=0.677500635690096
+20.11.2019 13:15:54.018 Error while processing incoming message #30. InvalidCastException 'Specified cast is not valid.'
+
+========================================
+Id: Bad
+Description: Specified cast is not valid.
+>>> Specified cast is not valid.
+---   at OPC_ConsoleClient+MyClient.OnNotification (Opc.Ua.Client.MonitoredItem item, Opc.Ua.Client.MonitoredItemNotificationEventArgs e) [0x0001b] in C:\Users\kami\work\Unity\FactoryServusreal\Assets\OPC_ConsoleClient.cs:246 
+---   at Opc.Ua.Client.MonitoredItem.SaveValueInCache (Opc.Ua.IEncodeable newValue) [0x001db] in <8ffa02eb4d0640189224b47729113681>:0 
+---   at Opc.Ua.Client.Subscription.SaveDataChange (Opc.Ua.NotificationMessage message, Opc.Ua.DataChangeNotification notifications, System.Collections.Generic.IList`1[T] stringTable) [0x000f9] in <8ffa02eb4d0640189224b47729113681>:0 
+---   at Opc.Ua.Client.Subscription.OnMessageReceived (System.Object state) [0x0026e] in <8ffa02eb4d0640189224b47729113681>:0 
+========================================
+
+20.11.2019 13:15:54.062 PUBLISH #32 RECEIVED
+20.11.2019 13:15:54.094 NOTIFICATION RECEIVED: SubId=69, SeqNo=31
+20.11.2019 13:15:54.137 PUBLISH #33 SENT
+20.11.2019 13:15:54.144 NotificationReceived: ClientHandle=4, Value=0.840371493377978
+20.11.2019 13:15:54.235 Error while processing incoming message #31. InvalidCastException 'Specified cast is not valid.'
+
+========================================
+Id: Bad
+Description: Specified cast is not valid.
+>>> Specified cast is not valid.
+---   at OPC_ConsoleClient+MyClient.OnNotification (Opc.Ua.Client.MonitoredItem item, Opc.Ua.Client.MonitoredItemNotificationEventArgs e) [0x0001b] in C:\Users\kami\work\Unity\FactoryServusreal\Assets\OPC_ConsoleClient.cs:246 
+---   at Opc.Ua.Client.MonitoredItem.SaveValueInCache (Opc.Ua.IEncodeable newValue) [0x001db] in <8ffa02eb4d0640189224b47729113681>:0 
+---   at Opc.Ua.Client.Subscription.SaveDataChange (Opc.Ua.NotificationMessage message, Opc.Ua.DataChangeNotification notifications, System.Collections.Generic.IList`1[T] stringTable) [0x000f9] in <8ffa02eb4d0640189224b47729113681>:0 
+---   at Opc.Ua.Client.Subscription.OnMessageReceived (System.Object state) [0x0026e] in <8ffa02eb4d0640189224b47729113681>:0 
+========================================
+
+20.11.2019 13:15:54.414 PUBLISH #33 RECEIVED
+20.11.2019 13:15:54.454 NOTIFICATION RECEIVED: SubId=69, SeqNo=32
+20.11.2019 13:15:54.488 PUBLISH #34 SENT
+20.11.2019 13:15:54.491 NotificationReceived: ClientHandle=4, Value=0.663775804297054
+20.11.2019 13:15:54.551 Error while processing incoming message #32. InvalidCastException 'Specified cast is not valid.'
+
+========================================
+Id: Bad
+Description: Specified cast is not valid.
+>>> Specified cast is not valid.
+---   at OPC_ConsoleClient+MyClient.OnNotification (Opc.Ua.Client.MonitoredItem item, Opc.Ua.Client.MonitoredItemNotificationEventArgs e) [0x0001b] in C:\Users\kami\work\Unity\FactoryServusreal\Assets\OPC_ConsoleClient.cs:246 
+---   at Opc.Ua.Client.MonitoredItem.SaveValueInCache (Opc.Ua.IEncodeable newValue) [0x001db] in <8ffa02eb4d0640189224b47729113681>:0 
+---   at Opc.Ua.Client.Subscription.SaveDataChange (Opc.Ua.NotificationMessage message, Opc.Ua.DataChangeNotification notifications, System.Collections.Generic.IList`1[T] stringTable) [0x000f9] in <8ffa02eb4d0640189224b47729113681>:0 
+---   at Opc.Ua.Client.Subscription.OnMessageReceived (System.Object state) [0x0026e] in <8ffa02eb4d0640189224b47729113681>:0 
+========================================
+
+20.11.2019 13:15:54.752 PUBLISH #34 RECEIVED
+20.11.2019 13:15:54.762 NOTIFICATION RECEIVED: SubId=69, SeqNo=33
+20.11.2019 13:15:54.772 PUBLISH #35 SENT
+20.11.2019 13:15:54.773 NotificationReceived: ClientHandle=4, Value=0.177179763718953
+20.11.2019 13:15:54.791 Error while processing incoming message #33. InvalidCastException 'Specified cast is not valid.'
+
+========================================
+Id: Bad
+Description: Specified cast is not valid.
+>>> Specified cast is not valid.
+---   at OPC_ConsoleClient+MyClient.OnNotification (Opc.Ua.Client.MonitoredItem item, Opc.Ua.Client.MonitoredItemNotificationEventArgs e) [0x0001b] in C:\Users\kami\work\Unity\FactoryServusreal\Assets\OPC_ConsoleClient.cs:246 
+---   at Opc.Ua.Client.MonitoredItem.SaveValueInCache (Opc.Ua.IEncodeable newValue) [0x001db] in <8ffa02eb4d0640189224b47729113681>:0 
+---   at Opc.Ua.Client.Subscription.SaveDataChange (Opc.Ua.NotificationMessage message, Opc.Ua.DataChangeNotification notifications, System.Collections.Generic.IList`1[T] stringTable) [0x000f9] in <8ffa02eb4d0640189224b47729113681>:0 
+---   at Opc.Ua.Client.Subscription.OnMessageReceived (System.Object state) [0x0026e] in <8ffa02eb4d0640189224b47729113681>:0 
+========================================
+
+20.11.2019 13:15:54.940 Channel 390: Close
+20.11.2019 13:15:54.949 Channel 390 in Closing state.
+20.11.2019 13:15:54.963 Channel 390: SendCloseSecureChannelRequest()
+20.11.2019 13:15:55.195 PUBLISH #35 RECEIVED
+20.11.2019 13:15:55.204 ***EXCEPTION*** BadNoSubscription
+20.11.2019 13:15:55.212 Publish #35, Subscription count = 0, Error: BadNoSubscription
+20.11.2019 13:15:55.220 Publish abandoned after error because session id changed: Old ns=1;s=Session:deff2f09-e271-44a2-94d2-1276c0760f04 != New 
+20.11.2019 13:15:55.372 Channel 0 in Closed state.
+20.11.2019 13:15:55.379 CLIENTCHANNEL SOCKET CLOSED: EB8D3F00, ChannelId=390

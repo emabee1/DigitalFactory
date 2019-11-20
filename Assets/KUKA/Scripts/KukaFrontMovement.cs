@@ -35,6 +35,9 @@ public class KukaFrontMovement : MonoBehaviour
     private bool ReturnHome = false;
     private bool PositionChanged = false;
 
+    private float coord;
+    private int part;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -46,7 +49,9 @@ public class KukaFrontMovement : MonoBehaviour
     {
         if (PositionChanged)
         {
-            print("KukaFront moves to");
+            print("KukaFront moves");
+            print("Coordinates" + coord);
+            print("Part" + part);
         }
 
         if (Input.GetKeyDown(KeyCode.F5))
@@ -342,8 +347,10 @@ public class KukaFrontMovement : MonoBehaviour
         }
     }
 
-    public void setPosition(int coord, int part)
+    public void setPosition(float coord, int part)
     {
+        this.coord = coord;
+        this.part = part;
         print("Coord: " + coord + "Part: " + part);
         PositionChanged = true;
         switch (part)
