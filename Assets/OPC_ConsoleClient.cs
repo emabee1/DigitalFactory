@@ -30,7 +30,7 @@ public class OPC_ConsoleClient : MonoBehaviour
         //string endpointURL = "opc.tcp://localhost:51210/UA/SampleServer";
         //string endpointURL = "opc.tcp://opcuaserver.com:48484";
         string endpointURL = "opc.tcp://milo.digitalpetri.com:62541/milo";
-        //string endpointURL = "opc.tcp://193.170.2.252:30005/Kuka"; // TODO always delete bevor commit
+        
 
 
         client = new MyClient(endpointURL, autoAccept);
