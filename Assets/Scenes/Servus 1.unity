@@ -208,6 +208,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RailRight
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4e7150f6a968a59478b3aca45e37b295, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4e7150f6a968a59478b3aca45e37b295, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.9584651
@@ -764,6 +768,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Keybord
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6e3f2cc667e6c7544b60957c92df6286, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6e3f2cc667e6c7544b60957c92df6286, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.587
@@ -1010,7 +1018,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!64 &129080924
 MeshCollider:
@@ -1109,7 +1117,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!65 &139233807
 BoxCollider:
@@ -1444,7 +1452,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &214652525
 Transform:
@@ -1696,6 +1704,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ConnectionStandaloneRight1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 842a47beb2a9194468b0779efb5c505e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 842a47beb2a9194468b0779efb5c505e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.958
@@ -1769,6 +1781,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RailFoot2
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 745691e432b3c4047b8c8a6c9f138100, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 745691e432b3c4047b8c8a6c9f138100, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.9584651
@@ -1841,6 +1857,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 745691e432b3c4047b8c8a6c9f138100, type: 3}
       propertyPath: m_Name
       value: RailFoot2 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 745691e432b3c4047b8c8a6c9f138100, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 745691e432b3c4047b8c8a6c9f138100, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2236,7 +2256,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!65 &504361208
 BoxCollider:
@@ -2328,7 +2348,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!65 &510164193
 BoxCollider:
@@ -2416,6 +2436,7 @@ GameObject:
   - component: {fileID: 534669903}
   - component: {fileID: 534669906}
   - component: {fileID: 534669907}
+  - component: {fileID: 534669908}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2481,13 +2502,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 534669902}
-  m_LocalRotation: {x: 0.22732085, y: 0.0963208, z: -0.063503526, w: 0.9669617}
-  m_LocalPosition: {x: 1.927, y: 2.181, z: -2.023}
+  m_LocalRotation: {x: 0.23401813, y: 0.23213878, z: -0.030708084, w: 0.9436123}
+  m_LocalPosition: {x: -2.357, y: 3.339, z: -2.768}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 26.863, y: 10.163, z: -5.0820003}
+  m_LocalEulerAnglesHint: {x: 27.123001, y: 28.430002, z: 3.265}
 --- !u!114 &534669906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2500,7 +2521,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d7810ea7ef03b444a91aeb090b7b399, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 200
+  speed: 2
   speedH: 2
   speedV: 2
 --- !u!114 &534669907
@@ -2513,6 +2534,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 00425a77d6ed2a044a42fb90d00859a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &534669908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534669902}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3694f12f7ff4dde41aea208d825cf835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &538803192
@@ -2987,7 +3020,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &691632692
 Transform:
@@ -3030,7 +3063,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &716284913
 Transform:
@@ -3208,6 +3241,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: f095c288b632f424aa428ffa50d1d76c, type: 3}
       propertyPath: m_Name
       value: TableFront
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: f095c288b632f424aa428ffa50d1d76c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: f095c288b632f424aa428ffa50d1d76c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3464,7 +3501,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &905420268
 Transform:
@@ -3643,6 +3680,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ConnectionStandaloneLeft2
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 842a47beb2a9194468b0779efb5c505e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 842a47beb2a9194468b0779efb5c505e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.8534651
@@ -3715,6 +3756,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: d5ce5821cfd3133489398547e7376f81, type: 3}
       propertyPath: m_Name
       value: RailLeft
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: d5ce5821cfd3133489398547e7376f81, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d5ce5821cfd3133489398547e7376f81, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3807,6 +3852,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 842a47beb2a9194468b0779efb5c505e, type: 3}
       propertyPath: m_Name
       value: ConnectionStandaloneLeft1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 842a47beb2a9194468b0779efb5c505e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 842a47beb2a9194468b0779efb5c505e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4532,7 +4581,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!65 &1189686043
 BoxCollider:
@@ -5219,6 +5268,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RailFoot2 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 745691e432b3c4047b8c8a6c9f138100, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 745691e432b3c4047b8c8a6c9f138100, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.9584651
@@ -5498,6 +5551,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 745691e432b3c4047b8c8a6c9f138100, type: 3}
       propertyPath: m_Name
       value: RailFoot2 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 745691e432b3c4047b8c8a6c9f138100, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 745691e432b3c4047b8c8a6c9f138100, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5872,6 +5929,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 225553978c862c84a9013a5ed981769a, type: 3}
       propertyPath: m_Name
       value: TableBack
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 225553978c862c84a9013a5ed981769a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 225553978c862c84a9013a5ed981769a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6329,6 +6390,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Table
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: b5901a2e18ca17548955d835324c8f03, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b5901a2e18ca17548955d835324c8f03, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.017
@@ -6414,7 +6479,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1876122562
 Transform:
@@ -6518,6 +6583,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 842a47beb2a9194468b0779efb5c505e, type: 3}
       propertyPath: m_Name
       value: ConnectionStandaloneRight2
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 842a47beb2a9194468b0779efb5c505e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 842a47beb2a9194468b0779efb5c505e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6939,9 +7008,9 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2053010163442607629}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b76e51778efed1b40b1dd0a87c8ce6fb, type: 3}
+  m_Script: {fileID: 11500000, guid: 78c8c799d915d554692a74dbad2a0bc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   part8: {fileID: 1048897421}
@@ -6951,6 +7020,8 @@ MonoBehaviour:
   part4: {fileID: 2007059575}
   part3: {fileID: 63671818}
   part2: {fileID: 412500955}
+  moveY: {x: 0, y: 1, z: 0}
+  moveZ: {x: 0, y: 0, z: 1}
 --- !u!1 &2053010163442607633
 GameObject:
   m_ObjectHideFlags: 0
@@ -7068,7 +7139,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2053010163442711101}
-  - component: {fileID: 2053010163442607646}
   m_Layer: 0
   m_Name: KUKA
   m_TagString: Untagged
@@ -7076,27 +7146,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2053010163442607646
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2053010163442607645}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78c8c799d915d554692a74dbad2a0bc2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  part8: {fileID: 1048897421}
-  part7: {fileID: 976288578}
-  part6: {fileID: 1185239440}
-  part5: {fileID: 2088412164}
-  part4: {fileID: 2007059575}
-  part3: {fileID: 63671818}
-  part2: {fileID: 412500955}
-  moveY: {x: 0, y: 1, z: 0}
-  moveZ: {x: 0, y: 0, z: 1}
 --- !u!1 &2053010163442607647
 GameObject:
   m_ObjectHideFlags: 0

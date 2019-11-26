@@ -1,16 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class cube3_2 : MonoBehaviour
+public class Cube3_2 : MonoBehaviour
 {
     public Vector3 rotation = new Vector3(0, 0, 1);
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
@@ -20,17 +12,15 @@ public class cube3_2 : MonoBehaviour
             if (transform.localEulerAngles.z < 120 || transform.localEulerAngles.z >= 240)
             {
                 transform.Rotate(rotation);
-                //Debug.Log("Part3:" + transform.localEulerAngles);
             }
         }
+
         if ((!Input.GetKey(KeyCode.LeftAlt)) && Input.GetKey("3"))
         {
             if (transform.localEulerAngles.z <= 120 || transform.localEulerAngles.z > 240)
             {
                 transform.Rotate(-rotation);
-                //Debug.Log("Part3:" + transform.localEulerAngles);
             }
         }
-
     }
 }

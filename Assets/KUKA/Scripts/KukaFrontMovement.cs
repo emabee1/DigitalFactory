@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections.Generic;
 
 public class KukaFrontMovement : MonoBehaviour
 {
@@ -29,14 +28,11 @@ public class KukaFrontMovement : MonoBehaviour
     private Vector3 to4;
     private Vector3 to3;
     private Vector3 to2;
-    
+
     private bool Top = false;
     private bool Bottom = false;
     private bool ReturnHome = false;
     private bool PositionChanged = false;
-
-    private float coord;
-    private int part;
 
     // Start is called before the first frame update
     void Start()
@@ -50,8 +46,14 @@ public class KukaFrontMovement : MonoBehaviour
         if (PositionChanged)
         {
             print("KukaFront moves");
-            print("Coordinates" + coord);
-            print("Part" + part);
+            part8.transform.localEulerAngles = to8;
+            part7.transform.localEulerAngles = to7;
+            part6.transform.localEulerAngles = to6;
+            part5.transform.localEulerAngles = to5;
+            part4.transform.localEulerAngles = to4;
+            part3.transform.localEulerAngles = to3;
+            part2.transform.localEulerAngles = to2;
+            PositionChanged = false;
         }
 
         if (Input.GetKeyDown(KeyCode.F5))
@@ -69,14 +71,6 @@ public class KukaFrontMovement : MonoBehaviour
         }
         if (Top)
         {
-            to8 = new Vector3(0, 347, 0);
-            to7 = new Vector3(0, 0, 72);
-            to6 = new Vector3(0, 113, 0);
-            to5 = new Vector3(0, 0, 313);
-            to4 = new Vector3(0, 63, 0);
-            to3 = new Vector3(0, 0, 276);
-            to2 = new Vector3(0, 31, 0);
-
             if (Vector3.Distance(part8.transform.localEulerAngles, to8) > 1f)
             {
                 position8 -= moveY;
@@ -246,7 +240,7 @@ public class KukaFrontMovement : MonoBehaviour
                 part2.transform.localEulerAngles = to2;
             }
         }
-        
+
         if (Input.GetKeyDown(KeyCode.F7))
         {
             Top = false;
@@ -347,42 +341,44 @@ public class KukaFrontMovement : MonoBehaviour
         }
     }
 
-    public void setPosition(float coord, int part)
+    public void ProcessServerInput(double coord, int displayname)
     {
-        this.coord = coord;
-        this.part = part;
-        print("Coord: " + coord + "Part: " + part);
+        //print("Coord: " + coord + "displayName: " + displayname);
         PositionChanged = true;
-        switch (part)
+        switch (displayname)
         {
-            case 1:
-                Top = true;
-                break;
-            case 2:
-                to2 = new Vector3(0, coord, 0);
-                break;
-            case 3:
-                to3 = new Vector3(0, 0, coord);
-                break;
-            case 4:
-                to4 = new Vector3(0, coord, 0);
-                break;
-            case 5:
-                to5 = new Vector3(0, 0, coord);
-                break;
-            case 6:
-                to6 = new Vector3(0, coord, 0);
+            case 8:
+                to8 = new Vector3(0, (float)coord*100, 0);
                 break;
             case 7:
-                to7 = new Vector3(0, 0, coord);
+                to7 = new Vector3(0, 0, (float)coord * 100);
                 break;
-            case 8:
-                to8 = new Vector3(0, coord, 0);
+            case 6:
+                to6 = new Vector3(0, (float)coord * 100, 0);
+                break;
+            case 5:
+                to5 = new Vector3(0, 0, (float)coord * 100);
+                break;
+            case 4:
+                to4 = new Vector3(0, (float)coord * 100, 0);
+                break;
+            case 3:
+                to3 = new Vector3(0, 0, (float)coord * 100);
+                break;
+            case 2:
+                to2 = new Vector3(0, (float)coord * 100, 0);
                 break;
             default:
                 break;
         }
 
+    }
+
+    public void demo(double coord)
+    {
+        print("demo: " + coord);
+        to8 = new Vector3(0, (float)coord * 100, 0);
+        PositionChanged = true;
     }
 }
 

@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class KukaBackMovement : MonoBehaviour
 {
+    #region initial Attributes
     public GameObject part8;
     public GameObject part7;
     public GameObject part6;
@@ -32,36 +30,26 @@ public class KukaBackMovement : MonoBehaviour
     private Vector3 to3;
     private Vector3 to2;
     
-    private bool GetPart = false;
-    private bool SetPart = false;
-    private bool TurnPart = false;
-    private bool ReturnHome = false;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
+    private bool BoolGetPart = false;
+    private bool BoolSetPart = false;
+    private bool BoolTurnPart = false;
+    private bool BoolReturnHome = false;
+    private bool BoolPositionChanged = false;
+    #endregion
 
     // Update is called once per frame
     void Update()
     {
+        if (BoolPositionChanged)
+        {
+            UpdatePosition();
+        }
 
         if (Input.GetKeyDown(KeyCode.F1))
         {
-            GetPart = true;
-            SetPart = false;
-            TurnPart = false;
-            ReturnHome = false;
-            to8 = new Vector3(0, 22, 0);
-            to7 = new Vector3(0, 0, 113);
-            to6 = new Vector3(0, 254, 0);
-            to5 = new Vector3(0, 0, 245);
-            to4 = new Vector3(0, 334, 0);
-            to3 = new Vector3(0, 0, 323);
-            to2 = new Vector3(0, 359, 0);
+            GetPart();
         }
-        if (GetPart)
+        if (BoolGetPart)
         {
             if (Vector3.Distance(part8.transform.localEulerAngles, to8) > 1f)
             {
@@ -101,7 +89,6 @@ public class KukaBackMovement : MonoBehaviour
             else
             {
                 part5.transform.localEulerAngles = to5;
-                //GetPart = false;
             }
 
             if (Vector3.Distance(part4.transform.localEulerAngles, to4) > 1f)
@@ -137,19 +124,9 @@ public class KukaBackMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.F2))
         {
-            GetPart = false;
-            SetPart = true;
-            TurnPart = false;
-            ReturnHome = false;
-            to8 = new Vector3(0, 341, 0);
-            to7 = new Vector3(0, 0, 111);
-            to6 = new Vector3(0, 276, 0);
-            to5 = new Vector3(0, 0, 287);
-            to4 = new Vector3(0, 340, 0);
-            to3 = new Vector3(0, 0, 324);
-            to2 = new Vector3(0, 6, 0);
+            SetPart();
         }
-        if (SetPart)
+        if (BoolSetPart)
         {
             if (Vector3.Distance(part8.transform.localEulerAngles, to8) > 1f)
             {
@@ -189,7 +166,6 @@ public class KukaBackMovement : MonoBehaviour
             else
             {
                 part5.transform.localEulerAngles = to5;
-                GetPart = false;
             }
 
             if (Vector3.Distance(part4.transform.localEulerAngles, to4) > 1f)
@@ -225,20 +201,9 @@ public class KukaBackMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.F3))
         {
-            GetPart = false;
-            SetPart = false;
-            TurnPart = true;
-            ReturnHome = false;
-
-            to8 = new Vector3(0, 331, 0);
-            to7 = new Vector3(0, 0, 119);
-            to6 = new Vector3(0, 269, 0);
-            to5 = new Vector3(0, 0, 269);
-            to4 = new Vector3(0, 156, 0);
-            to3 = new Vector3(0, 0, 26);
-            to2 = new Vector3(0, 356, 0);
+            TurnPart();
         }
-        if (TurnPart)
+        if (BoolTurnPart)
         {
             if (Vector3.Distance(part8.transform.localEulerAngles, to8) > 1f)
             {
@@ -313,19 +278,9 @@ public class KukaBackMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.F4))
         {
-            GetPart = false;
-            SetPart = false;
-            TurnPart = false;
-            ReturnHome = true;
-            to8 = new Vector3(0, 0, 0);
-            to7 = new Vector3(0, 0, 0);
-            to6 = new Vector3(0, 0, 0);
-            to5 = new Vector3(0, 0, 0);
-            to4 = new Vector3(0, 0, 0);
-            to3 = new Vector3(0, 0, 0);
-            to2 = new Vector3(0, 0, 0);
+            ReturnHome();
         }
-        if (ReturnHome)
+        if (BoolReturnHome)
         {
             if (Vector3.Distance(part8.transform.localEulerAngles, to8) > 1f)
             {
@@ -400,12 +355,130 @@ public class KukaBackMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.F12))
         {
-            GetPart = false;
-            SetPart = false;
-            TurnPart = false;
-            ReturnHome = false;
+            stopMoving();
         }
     }
+
+    //Method calld by the OPC script
+    public void ProcessServerInput(double coord, int displayname)
+    {
+        switch (displayname)
+        {
+            case 8:
+                to8 = new Vector3(0, (float)coord * 100, 0);
+                break;
+            case 7:
+                to7 = new Vector3(0, 0, (float)coord * 100);
+                break;
+            case 6:
+                to6 = new Vector3(0, (float)coord * 100, 0);
+                break;
+            case 5:
+                to5 = new Vector3(0, 0, (float)coord * 100);
+                break;
+            case 4:
+                to4 = new Vector3(0, (float)coord * 100, 0);
+                break;
+            case 3:
+                to3 = new Vector3(0, 0, (float)coord * 100);
+                break;
+            case 2:
+                to2 = new Vector3(0, (float)coord * 100, 0);
+                break;
+            default:
+                break;
+        }
+        BoolPositionChanged = true;
+        BoolGetPart = false;
+        BoolSetPart = false;
+        BoolTurnPart = false;
+        BoolReturnHome = false;
+
+    }
+
+    private void UpdatePosition()
+    {
+        print("KukaBack moves");
+        part8.transform.localEulerAngles = to8;
+        part7.transform.localEulerAngles = to7;
+        part6.transform.localEulerAngles = to6;
+        part5.transform.localEulerAngles = to5;
+        part4.transform.localEulerAngles = to4;
+        part3.transform.localEulerAngles = to3;
+        part2.transform.localEulerAngles = to2;
+        BoolPositionChanged = false;
+    }
+
+    #region Methodes to set fix positions
+    private void GetPart()
+    {
+        BoolGetPart = true;
+        BoolSetPart = false;
+        BoolTurnPart = false;
+        BoolReturnHome = false;
+        to8 = new Vector3(0, 22, 0);
+        to7 = new Vector3(0, 0, 113);
+        to6 = new Vector3(0, 254, 0);
+        to5 = new Vector3(0, 0, 245);
+        to4 = new Vector3(0, 334, 0);
+        to3 = new Vector3(0, 0, 323);
+        to2 = new Vector3(0, 359, 0);
+    }
+
+    private void SetPart()
+    {
+        BoolGetPart = false;
+        BoolSetPart = true;
+        BoolTurnPart = false;
+        BoolReturnHome = false;
+        to8 = new Vector3(0, 341, 0);
+        to7 = new Vector3(0, 0, 111);
+        to6 = new Vector3(0, 276, 0);
+        to5 = new Vector3(0, 0, 287);
+        to4 = new Vector3(0, 340, 0);
+        to3 = new Vector3(0, 0, 324);
+        to2 = new Vector3(0, 6, 0);
+    }
+
+    private void TurnPart()
+    {
+        BoolGetPart = false;
+        BoolSetPart = false;
+        BoolTurnPart = true;
+        BoolReturnHome = false;
+
+        to8 = new Vector3(0, 331, 0);
+        to7 = new Vector3(0, 0, 119);
+        to6 = new Vector3(0, 269, 0);
+        to5 = new Vector3(0, 0, 269);
+        to4 = new Vector3(0, 156, 0);
+        to3 = new Vector3(0, 0, 26);
+        to2 = new Vector3(0, 356, 0);
+    }
+
+    private void ReturnHome()
+    {
+        BoolGetPart = false;
+        BoolSetPart = false;
+        BoolTurnPart = false;
+        BoolReturnHome = true;
+        to8 = new Vector3(0, 0, 0);
+        to7 = new Vector3(0, 0, 0);
+        to6 = new Vector3(0, 0, 0);
+        to5 = new Vector3(0, 0, 0);
+        to4 = new Vector3(0, 0, 0);
+        to3 = new Vector3(0, 0, 0);
+        to2 = new Vector3(0, 0, 0);
+    }
+
+    private void stopMoving()
+    {
+        BoolGetPart = false;
+        BoolSetPart = false;
+        BoolTurnPart = false;
+        BoolReturnHome = false;
+    }
+    #endregion
 }
 
 
