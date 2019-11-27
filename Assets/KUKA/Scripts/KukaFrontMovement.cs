@@ -2,6 +2,7 @@
 
 public class KukaFrontMovement : MonoBehaviour
 {
+    #region initial Attributes
     public GameObject part8;
     public GameObject part7;
     public GameObject part6;
@@ -29,47 +30,25 @@ public class KukaFrontMovement : MonoBehaviour
     private Vector3 to3;
     private Vector3 to2;
 
-    private bool Top = false;
-    private bool Bottom = false;
-    private bool ReturnHome = false;
-    private bool PositionChanged = false;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
+    private bool boolTop = false;
+    private bool boolBottom = false;
+    private bool boolReturnHome = false;
+    private bool boolPositionChanged = false;
+    #endregion
 
     // Update is called once per frame
     void Update()
     {
-        if (PositionChanged)
+        if (boolPositionChanged)
         {
-            print("KukaFront moves");
-            part8.transform.localEulerAngles = to8;
-            part7.transform.localEulerAngles = to7;
-            part6.transform.localEulerAngles = to6;
-            part5.transform.localEulerAngles = to5;
-            part4.transform.localEulerAngles = to4;
-            part3.transform.localEulerAngles = to3;
-            part2.transform.localEulerAngles = to2;
-            PositionChanged = false;
+            UpdatePosition();
         }
 
         if (Input.GetKeyDown(KeyCode.F5))
         {
-            Top = true;
-            Bottom = false;
-            ReturnHome = false;
-            to8 = new Vector3(0, 347, 0);
-            to7 = new Vector3(0, 0, 72);
-            to6 = new Vector3(0, 113, 0);
-            to5 = new Vector3(0, 0, 313);
-            to4 = new Vector3(0, 63, 0);
-            to3 = new Vector3(0, 0, 276);
-            to2 = new Vector3(0, 31, 0);
+            ToTop();
         }
-        if (Top)
+        if (boolTop)
         {
             if (Vector3.Distance(part8.transform.localEulerAngles, to8) > 1f)
             {
@@ -101,7 +80,7 @@ public class KukaFrontMovement : MonoBehaviour
             else
             {
                 part6.transform.localEulerAngles = to6;
-                Top = false;
+                boolTop = false;
             }
 
             if (Vector3.Distance(part5.transform.localEulerAngles, to5) > 1f)
@@ -150,18 +129,9 @@ public class KukaFrontMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.F6))
         {
-            Top = false;
-            Bottom = true;
-            ReturnHome = false;
-            to8 = new Vector3(0, 332, 0);
-            to7 = new Vector3(0, 0, 51);
-            to6 = new Vector3(0, 163, 0);
-            to5 = new Vector3(0, 0, 285);
-            to4 = new Vector3(0, 19, 0);
-            to3 = new Vector3(0, 0, 306);
-            to2 = new Vector3(0, 39, 0);
+            ToBottom();
         }
-        if (Bottom)
+        if (boolBottom)
         {
             if (Vector3.Distance(part8.transform.localEulerAngles, to8) > 1f)
             {
@@ -182,7 +152,7 @@ public class KukaFrontMovement : MonoBehaviour
             else
             {
                 part7.transform.localEulerAngles = to7;
-                Top = false;
+                boolTop = false;
             }
 
 
@@ -243,18 +213,9 @@ public class KukaFrontMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.F7))
         {
-            Top = false;
-            Bottom = false;
-            ReturnHome = true;
-            to8 = new Vector3(0, 0, 0);
-            to7 = new Vector3(0, 0, 0);
-            to6 = new Vector3(0, 0, 0);
-            to5 = new Vector3(0, 0, 0);
-            to4 = new Vector3(0, 0, 0);
-            to3 = new Vector3(0, 0, 0);
-            to2 = new Vector3(0, 0, 0);
+            ToReturnHome();
         }
-        if (ReturnHome)
+        if (boolReturnHome)
         {
             if (Vector3.Distance(part8.transform.localEulerAngles, to8) > 1f)
             {
@@ -335,16 +296,15 @@ public class KukaFrontMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.F12))
         {
-            Top = false;
-            Bottom = false;
-            ReturnHome = false;
+            StopMoving();
         }
     }
 
+    //Method called by the OPC script
     public void ProcessServerInput(double coord, int displayname)
     {
         //print("Coord: " + coord + "displayName: " + displayname);
-        PositionChanged = true;
+        boolPositionChanged = true;
         switch (displayname)
         {
             case 8:
@@ -374,12 +334,69 @@ public class KukaFrontMovement : MonoBehaviour
 
     }
 
-    public void demo(double coord)
+    private void UpdatePosition()
     {
-        print("demo: " + coord);
-        to8 = new Vector3(0, (float)coord * 100, 0);
-        PositionChanged = true;
+        print("KukaFront moves");
+        part8.transform.localEulerAngles = to8;
+        part7.transform.localEulerAngles = to7;
+        part6.transform.localEulerAngles = to6;
+        part5.transform.localEulerAngles = to5;
+        part4.transform.localEulerAngles = to4;
+        part3.transform.localEulerAngles = to3;
+        part2.transform.localEulerAngles = to2;
+        boolPositionChanged = false;
     }
+
+    #region Methodes to set fix positions
+    private void ToTop()
+    {
+        boolTop = true;
+        boolBottom = false;
+        boolReturnHome = false;
+        to8 = new Vector3(0, 347, 0);
+        to7 = new Vector3(0, 0, 72);
+        to6 = new Vector3(0, 113, 0);
+        to5 = new Vector3(0, 0, 313);
+        to4 = new Vector3(0, 63, 0);
+        to3 = new Vector3(0, 0, 276);
+        to2 = new Vector3(0, 31, 0);
+    }
+
+    private void ToBottom()
+    {
+        boolTop = false;
+        boolBottom = true;
+        boolReturnHome = false;
+        to8 = new Vector3(0, 332, 0);
+        to7 = new Vector3(0, 0, 51);
+        to6 = new Vector3(0, 163, 0);
+        to5 = new Vector3(0, 0, 285);
+        to4 = new Vector3(0, 19, 0);
+        to3 = new Vector3(0, 0, 306);
+        to2 = new Vector3(0, 39, 0);
+    }
+
+    private void ToReturnHome()
+    {
+        boolTop = false;
+        boolBottom = false;
+        boolReturnHome = true;
+        to8 = new Vector3(0, 0, 0);
+        to7 = new Vector3(0, 0, 0);
+        to6 = new Vector3(0, 0, 0);
+        to5 = new Vector3(0, 0, 0);
+        to4 = new Vector3(0, 0, 0);
+        to3 = new Vector3(0, 0, 0);
+        to2 = new Vector3(0, 0, 0);
+    }
+
+    private void StopMoving()
+    {
+        boolTop = false;
+        boolBottom = false;
+        boolReturnHome = false;
+    }
+    #endregion
 }
 
 

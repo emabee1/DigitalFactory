@@ -30,17 +30,17 @@ public class KukaBackMovement : MonoBehaviour
     private Vector3 to3;
     private Vector3 to2;
     
-    private bool BoolGetPart = false;
-    private bool BoolSetPart = false;
-    private bool BoolTurnPart = false;
-    private bool BoolReturnHome = false;
-    private bool BoolPositionChanged = false;
+    private bool boolGetPart = false;
+    private bool boolSetPart = false;
+    private bool boolTurnPart = false;
+    private bool boolReturnHome = false;
+    private bool boolPositionChanged = false;
     #endregion
 
     // Update is called once per frame
     void Update()
     {
-        if (BoolPositionChanged)
+        if (boolPositionChanged)
         {
             UpdatePosition();
         }
@@ -49,7 +49,7 @@ public class KukaBackMovement : MonoBehaviour
         {
             GetPart();
         }
-        if (BoolGetPart)
+        if (boolGetPart)
         {
             if (Vector3.Distance(part8.transform.localEulerAngles, to8) > 1f)
             {
@@ -126,7 +126,7 @@ public class KukaBackMovement : MonoBehaviour
         {
             SetPart();
         }
-        if (BoolSetPart)
+        if (boolSetPart)
         {
             if (Vector3.Distance(part8.transform.localEulerAngles, to8) > 1f)
             {
@@ -203,7 +203,7 @@ public class KukaBackMovement : MonoBehaviour
         {
             TurnPart();
         }
-        if (BoolTurnPart)
+        if (boolTurnPart)
         {
             if (Vector3.Distance(part8.transform.localEulerAngles, to8) > 1f)
             {
@@ -280,7 +280,7 @@ public class KukaBackMovement : MonoBehaviour
         {
             ReturnHome();
         }
-        if (BoolReturnHome)
+        if (boolReturnHome)
         {
             if (Vector3.Distance(part8.transform.localEulerAngles, to8) > 1f)
             {
@@ -355,11 +355,11 @@ public class KukaBackMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.F12))
         {
-            stopMoving();
+            StopMoving();
         }
     }
 
-    //Method calld by the OPC script
+    //Method called by the OPC script
     public void ProcessServerInput(double coord, int displayname)
     {
         switch (displayname)
@@ -388,11 +388,11 @@ public class KukaBackMovement : MonoBehaviour
             default:
                 break;
         }
-        BoolPositionChanged = true;
-        BoolGetPart = false;
-        BoolSetPart = false;
-        BoolTurnPart = false;
-        BoolReturnHome = false;
+        boolPositionChanged = true;
+        boolGetPart = false;
+        boolSetPart = false;
+        boolTurnPart = false;
+        boolReturnHome = false;
 
     }
 
@@ -406,16 +406,16 @@ public class KukaBackMovement : MonoBehaviour
         part4.transform.localEulerAngles = to4;
         part3.transform.localEulerAngles = to3;
         part2.transform.localEulerAngles = to2;
-        BoolPositionChanged = false;
+        boolPositionChanged = false;
     }
 
     #region Methodes to set fix positions
     private void GetPart()
     {
-        BoolGetPart = true;
-        BoolSetPart = false;
-        BoolTurnPart = false;
-        BoolReturnHome = false;
+        boolGetPart = true;
+        boolSetPart = false;
+        boolTurnPart = false;
+        boolReturnHome = false;
         to8 = new Vector3(0, 22, 0);
         to7 = new Vector3(0, 0, 113);
         to6 = new Vector3(0, 254, 0);
@@ -427,10 +427,10 @@ public class KukaBackMovement : MonoBehaviour
 
     private void SetPart()
     {
-        BoolGetPart = false;
-        BoolSetPart = true;
-        BoolTurnPart = false;
-        BoolReturnHome = false;
+        boolGetPart = false;
+        boolSetPart = true;
+        boolTurnPart = false;
+        boolReturnHome = false;
         to8 = new Vector3(0, 341, 0);
         to7 = new Vector3(0, 0, 111);
         to6 = new Vector3(0, 276, 0);
@@ -442,10 +442,10 @@ public class KukaBackMovement : MonoBehaviour
 
     private void TurnPart()
     {
-        BoolGetPart = false;
-        BoolSetPart = false;
-        BoolTurnPart = true;
-        BoolReturnHome = false;
+        boolGetPart = false;
+        boolSetPart = false;
+        boolTurnPart = true;
+        boolReturnHome = false;
 
         to8 = new Vector3(0, 331, 0);
         to7 = new Vector3(0, 0, 119);
@@ -458,10 +458,10 @@ public class KukaBackMovement : MonoBehaviour
 
     private void ReturnHome()
     {
-        BoolGetPart = false;
-        BoolSetPart = false;
-        BoolTurnPart = false;
-        BoolReturnHome = true;
+        boolGetPart = false;
+        boolSetPart = false;
+        boolTurnPart = false;
+        boolReturnHome = true;
         to8 = new Vector3(0, 0, 0);
         to7 = new Vector3(0, 0, 0);
         to6 = new Vector3(0, 0, 0);
@@ -471,12 +471,12 @@ public class KukaBackMovement : MonoBehaviour
         to2 = new Vector3(0, 0, 0);
     }
 
-    private void stopMoving()
+    private void StopMoving()
     {
-        BoolGetPart = false;
-        BoolSetPart = false;
-        BoolTurnPart = false;
-        BoolReturnHome = false;
+        boolGetPart = false;
+        boolSetPart = false;
+        boolTurnPart = false;
+        boolReturnHome = false;
     }
     #endregion
 }
