@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class KukaBackMovement : MonoBehaviour
 {
@@ -51,75 +52,7 @@ public class KukaBackMovement : MonoBehaviour
         }
         if (boolGetPart)
         {
-            if (Vector3.Distance(part8.transform.localEulerAngles, to8) > 1f)
-            {
-                position8 += moveY;
-                part8.transform.localEulerAngles = position8;
-            }
-            else
-            {
-                part8.transform.localEulerAngles = to8;
-            }
-
-            if (Vector3.Distance(part7.transform.localEulerAngles, to7) > 1f)
-            {
-                position7 += moveZ;
-                part7.transform.localEulerAngles = position7;
-            }
-            else
-            {
-                part7.transform.localEulerAngles = to7;
-            }
-
-            if (Vector3.Distance(part6.transform.localEulerAngles, to6) > 1f)
-            {
-                position6 -= moveY;
-                part6.transform.localEulerAngles = position6;
-            }
-            else
-            {
-                part6.transform.localEulerAngles = to6;
-            }
-
-            if (Vector3.Distance(part5.transform.localEulerAngles, to5) > 1f)
-            {
-                position5 -= moveZ;
-                part5.transform.localEulerAngles = position5;
-            }
-            else
-            {
-                part5.transform.localEulerAngles = to5;
-            }
-
-            if (Vector3.Distance(part4.transform.localEulerAngles, to4) > 1f)
-            {
-                position4 -= moveY;
-                part4.transform.localEulerAngles = position4;
-            }
-            else
-            {
-                part4.transform.localEulerAngles = to4;
-            }
-
-            if (Vector3.Distance(part3.transform.localEulerAngles, to3) > 1f)
-            {
-                position3 -= moveZ;
-                part3.transform.localEulerAngles = position3;
-            }
-            else
-            {
-                part3.transform.localEulerAngles = to3;
-            }
-
-            if (Vector3.Distance(part2.transform.localEulerAngles, to2) > 1f)
-            {
-                position2 -= moveY;
-                part2.transform.localEulerAngles = position2;
-            }
-            else
-            {
-                part2.transform.localEulerAngles = to2;
-            }
+            MoveToGetPart();
         }
 
         if (Input.GetKeyDown(KeyCode.F2))
@@ -128,75 +61,7 @@ public class KukaBackMovement : MonoBehaviour
         }
         if (boolSetPart)
         {
-            if (Vector3.Distance(part8.transform.localEulerAngles, to8) > 1f)
-            {
-                position8 -= moveY;
-                part8.transform.localEulerAngles = position8;
-            }
-            else
-            {
-                part8.transform.localEulerAngles = to8;
-            }
-
-            if (Vector3.Distance(part7.transform.localEulerAngles, to7) > 1f)
-            {
-                position7 -= moveZ;
-                part7.transform.localEulerAngles = position7;
-            }
-            else
-            {
-                part7.transform.localEulerAngles = to7;
-            }
-
-            if (Vector3.Distance(part6.transform.localEulerAngles, to6) > 1f)
-            {
-                position6 += moveY;
-                part6.transform.localEulerAngles = position6;
-            }
-            else
-            {
-                part6.transform.localEulerAngles = to6;
-            }
-
-            if (Vector3.Distance(part5.transform.localEulerAngles, to5) > 1f)
-            {
-                position5 += moveZ;
-                part5.transform.localEulerAngles = position5;
-            }
-            else
-            {
-                part5.transform.localEulerAngles = to5;
-            }
-
-            if (Vector3.Distance(part4.transform.localEulerAngles, to4) > 1f)
-            {
-                position4 += moveY;
-                part4.transform.localEulerAngles = position4;
-            }
-            else
-            {
-                part4.transform.localEulerAngles = to4;
-            }
-
-            if (Vector3.Distance(part3.transform.localEulerAngles, to3) > 1f)
-            {
-                position3 += moveZ;
-                part3.transform.localEulerAngles = position3;
-            }
-            else
-            {
-                part3.transform.localEulerAngles = to3;
-            }
-
-            if (Vector3.Distance(part2.transform.localEulerAngles, to2) > 1f)
-            {
-                position2 += moveY;
-                part2.transform.localEulerAngles = position2;
-            }
-            else
-            {
-                part2.transform.localEulerAngles = to2;
-            }
+            MoveToSetPart();
         }
 
         if (Input.GetKeyDown(KeyCode.F3))
@@ -205,75 +70,7 @@ public class KukaBackMovement : MonoBehaviour
         }
         if (boolTurnPart)
         {
-            if (Vector3.Distance(part8.transform.localEulerAngles, to8) > 1f)
-            {
-                position8 -= moveY;
-                part8.transform.localEulerAngles = position8;
-            }
-            else
-            {
-                part8.transform.localEulerAngles = to8;
-            }
-
-            if (Vector3.Distance(part7.transform.localEulerAngles, to7) > 1f)
-            {
-                position7 += moveZ;
-                part7.transform.localEulerAngles = position7;
-            }
-            else
-            {
-                part7.transform.localEulerAngles = to7;
-            }
-
-            if (Vector3.Distance(part6.transform.localEulerAngles, to6) > 1f)
-            {
-                position6 -= moveY;
-                part6.transform.localEulerAngles = position6;
-            }
-            else
-            {
-                part6.transform.localEulerAngles = to6;
-            }
-
-            if (Vector3.Distance(part5.transform.localEulerAngles, to5) > 1f)
-            {
-                position5 -= moveZ;
-                part5.transform.localEulerAngles = position5;
-            }
-            else
-            {
-                part5.transform.localEulerAngles = to5;
-            }
-
-            if (Vector3.Distance(part4.transform.localEulerAngles, to4) > 1f)
-            {
-                position4 -= moveY;
-                part4.transform.localEulerAngles = position4;
-            }
-            else
-            {
-                part4.transform.localEulerAngles = to4;
-            }
-
-            if (Vector3.Distance(part3.transform.localEulerAngles, to3) > 1f)
-            {
-                position3 += moveZ;
-                part3.transform.localEulerAngles = position3;
-            }
-            else
-            {
-                part3.transform.localEulerAngles = to3;
-            }
-
-            if (Vector3.Distance(part2.transform.localEulerAngles, to2) > 1f)
-            {
-                position2 -= moveY;
-                part2.transform.localEulerAngles = position2;
-            }
-            else
-            {
-                part2.transform.localEulerAngles = to2;
-            }
+            MoveToTurnPart();
         }
 
         if (Input.GetKeyDown(KeyCode.F4))
@@ -282,75 +79,7 @@ public class KukaBackMovement : MonoBehaviour
         }
         if (boolReturnHome)
         {
-            if (Vector3.Distance(part8.transform.localEulerAngles, to8) > 1f)
-            {
-                position8 += moveY;
-                part8.transform.localEulerAngles = position8;
-            }
-            else
-            {
-                part8.transform.localEulerAngles = to8;
-            }
-
-            if (Vector3.Distance(part7.transform.localEulerAngles, to7) > 1f)
-            {
-                position7 -= moveZ;
-                part7.transform.localEulerAngles = position7;
-            }
-            else
-            {
-                part7.transform.localEulerAngles = to7;
-            }
-
-            if (Vector3.Distance(part6.transform.localEulerAngles, to6) > 1f)
-            {
-                position6 += moveY;
-                part6.transform.localEulerAngles = position6;
-            }
-            else
-            {
-                part6.transform.localEulerAngles = to6;
-            }
-
-            if (Vector3.Distance(part5.transform.localEulerAngles, to5) > 1f)
-            {
-                position5 += moveZ;
-                part5.transform.localEulerAngles = position5;
-            }
-            else
-            {
-                part5.transform.localEulerAngles = to5;
-            }
-
-            if (Vector3.Distance(part4.transform.localEulerAngles, to4) > 1f)
-            {
-                position4 -= moveY;
-                part4.transform.localEulerAngles = position4;
-            }
-            else
-            {
-                part4.transform.localEulerAngles = to4;
-            }
-
-            if (Vector3.Distance(part3.transform.localEulerAngles, to3) > 1f)
-            {
-                position3 -= moveZ;
-                part3.transform.localEulerAngles = position3;
-            }
-            else
-            {
-                part3.transform.localEulerAngles = to3;
-            }
-
-            if (Vector3.Distance(part2.transform.localEulerAngles, to2) > 1f)
-            {
-                position2 += moveY;
-                part2.transform.localEulerAngles = position2;
-            }
-            else
-            {
-                part2.transform.localEulerAngles = to2;
-            }
+            MoveToReturnHome();
         }
 
         if (Input.GetKeyDown(KeyCode.F12))
@@ -358,6 +87,8 @@ public class KukaBackMovement : MonoBehaviour
             StopMoving();
         }
     }
+
+    
 
     //Method called by the OPC script
     public void ProcessServerInput(double coord, int displayname)
@@ -477,6 +208,300 @@ public class KukaBackMovement : MonoBehaviour
         boolSetPart = false;
         boolTurnPart = false;
         boolReturnHome = false;
+    }
+    #endregion
+
+    #region Methodes to move Kuka
+    private void MoveToGetPart()
+    {
+        if (Vector3.Distance(part8.transform.localEulerAngles, to8) > 1f)
+        {
+            position8 += moveY;
+            part8.transform.localEulerAngles = position8;
+        }
+        else
+        {
+            part8.transform.localEulerAngles = to8;
+        }
+
+        if (Vector3.Distance(part7.transform.localEulerAngles, to7) > 1f)
+        {
+            position7 += moveZ;
+            part7.transform.localEulerAngles = position7;
+        }
+        else
+        {
+            part7.transform.localEulerAngles = to7;
+        }
+
+        if (Vector3.Distance(part6.transform.localEulerAngles, to6) > 1f)
+        {
+            position6 -= moveY;
+            part6.transform.localEulerAngles = position6;
+        }
+        else
+        {
+            part6.transform.localEulerAngles = to6;
+        }
+
+        if (Vector3.Distance(part5.transform.localEulerAngles, to5) > 1f)
+        {
+            position5 -= moveZ;
+            part5.transform.localEulerAngles = position5;
+        }
+        else
+        {
+            part5.transform.localEulerAngles = to5;
+        }
+
+        if (Vector3.Distance(part4.transform.localEulerAngles, to4) > 1f)
+        {
+            position4 -= moveY;
+            part4.transform.localEulerAngles = position4;
+        }
+        else
+        {
+            part4.transform.localEulerAngles = to4;
+        }
+
+        if (Vector3.Distance(part3.transform.localEulerAngles, to3) > 1f)
+        {
+            position3 -= moveZ;
+            part3.transform.localEulerAngles = position3;
+        }
+        else
+        {
+            part3.transform.localEulerAngles = to3;
+        }
+
+        if (Vector3.Distance(part2.transform.localEulerAngles, to2) > 1f)
+        {
+            position2 -= moveY;
+            part2.transform.localEulerAngles = position2;
+        }
+        else
+        {
+            part2.transform.localEulerAngles = to2;
+        }
+    }
+
+    private void MoveToSetPart()
+    {
+        if (Vector3.Distance(part8.transform.localEulerAngles, to8) > 1f)
+        {
+            position8 -= moveY;
+            part8.transform.localEulerAngles = position8;
+        }
+        else
+        {
+            part8.transform.localEulerAngles = to8;
+        }
+
+        if (Vector3.Distance(part7.transform.localEulerAngles, to7) > 1f)
+        {
+            position7 -= moveZ;
+            part7.transform.localEulerAngles = position7;
+        }
+        else
+        {
+            part7.transform.localEulerAngles = to7;
+        }
+
+        if (Vector3.Distance(part6.transform.localEulerAngles, to6) > 1f)
+        {
+            position6 += moveY;
+            part6.transform.localEulerAngles = position6;
+        }
+        else
+        {
+            part6.transform.localEulerAngles = to6;
+        }
+
+        if (Vector3.Distance(part5.transform.localEulerAngles, to5) > 1f)
+        {
+            position5 += moveZ;
+            part5.transform.localEulerAngles = position5;
+        }
+        else
+        {
+            part5.transform.localEulerAngles = to5;
+        }
+
+        if (Vector3.Distance(part4.transform.localEulerAngles, to4) > 1f)
+        {
+            position4 += moveY;
+            part4.transform.localEulerAngles = position4;
+        }
+        else
+        {
+            part4.transform.localEulerAngles = to4;
+        }
+
+        if (Vector3.Distance(part3.transform.localEulerAngles, to3) > 1f)
+        {
+            position3 += moveZ;
+            part3.transform.localEulerAngles = position3;
+        }
+        else
+        {
+            part3.transform.localEulerAngles = to3;
+        }
+
+        if (Vector3.Distance(part2.transform.localEulerAngles, to2) > 1f)
+        {
+            position2 += moveY;
+            part2.transform.localEulerAngles = position2;
+        }
+        else
+        {
+            part2.transform.localEulerAngles = to2;
+        }
+    }
+
+    private void MoveToTurnPart()
+    {
+        if (Vector3.Distance(part8.transform.localEulerAngles, to8) > 1f)
+        {
+            position8 -= moveY;
+            part8.transform.localEulerAngles = position8;
+        }
+        else
+        {
+            part8.transform.localEulerAngles = to8;
+        }
+
+        if (Vector3.Distance(part7.transform.localEulerAngles, to7) > 1f)
+        {
+            position7 += moveZ;
+            part7.transform.localEulerAngles = position7;
+        }
+        else
+        {
+            part7.transform.localEulerAngles = to7;
+        }
+
+        if (Vector3.Distance(part6.transform.localEulerAngles, to6) > 1f)
+        {
+            position6 -= moveY;
+            part6.transform.localEulerAngles = position6;
+        }
+        else
+        {
+            part6.transform.localEulerAngles = to6;
+        }
+
+        if (Vector3.Distance(part5.transform.localEulerAngles, to5) > 1f)
+        {
+            position5 -= moveZ;
+            part5.transform.localEulerAngles = position5;
+        }
+        else
+        {
+            part5.transform.localEulerAngles = to5;
+        }
+
+        if (Vector3.Distance(part4.transform.localEulerAngles, to4) > 1f)
+        {
+            position4 -= moveY;
+            part4.transform.localEulerAngles = position4;
+        }
+        else
+        {
+            part4.transform.localEulerAngles = to4;
+        }
+
+        if (Vector3.Distance(part3.transform.localEulerAngles, to3) > 1f)
+        {
+            position3 += moveZ;
+            part3.transform.localEulerAngles = position3;
+        }
+        else
+        {
+            part3.transform.localEulerAngles = to3;
+        }
+
+        if (Vector3.Distance(part2.transform.localEulerAngles, to2) > 1f)
+        {
+            position2 -= moveY;
+            part2.transform.localEulerAngles = position2;
+        }
+        else
+        {
+            part2.transform.localEulerAngles = to2;
+        }
+    }
+
+    private void MoveToReturnHome()
+    {
+        if (Vector3.Distance(part8.transform.localEulerAngles, to8) > 1f)
+        {
+            position8 += moveY;
+            part8.transform.localEulerAngles = position8;
+        }
+        else
+        {
+            part8.transform.localEulerAngles = to8;
+        }
+
+        if (Vector3.Distance(part7.transform.localEulerAngles, to7) > 1f)
+        {
+            position7 -= moveZ;
+            part7.transform.localEulerAngles = position7;
+        }
+        else
+        {
+            part7.transform.localEulerAngles = to7;
+        }
+
+        if (Vector3.Distance(part6.transform.localEulerAngles, to6) > 1f)
+        {
+            position6 += moveY;
+            part6.transform.localEulerAngles = position6;
+        }
+        else
+        {
+            part6.transform.localEulerAngles = to6;
+        }
+
+        if (Vector3.Distance(part5.transform.localEulerAngles, to5) > 1f)
+        {
+            position5 += moveZ;
+            part5.transform.localEulerAngles = position5;
+        }
+        else
+        {
+            part5.transform.localEulerAngles = to5;
+        }
+
+        if (Vector3.Distance(part4.transform.localEulerAngles, to4) > 1f)
+        {
+            position4 -= moveY;
+            part4.transform.localEulerAngles = position4;
+        }
+        else
+        {
+            part4.transform.localEulerAngles = to4;
+        }
+
+        if (Vector3.Distance(part3.transform.localEulerAngles, to3) > 1f)
+        {
+            position3 -= moveZ;
+            part3.transform.localEulerAngles = position3;
+        }
+        else
+        {
+            part3.transform.localEulerAngles = to3;
+        }
+
+        if (Vector3.Distance(part2.transform.localEulerAngles, to2) > 1f)
+        {
+            position2 += moveY;
+            part2.transform.localEulerAngles = position2;
+        }
+        else
+        {
+            part2.transform.localEulerAngles = to2;
+        }
     }
     #endregion
 }

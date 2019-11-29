@@ -1,78 +1,122 @@
 
-************************* Logging started at 11/26/2019 11:21:52
-26.11.2019 11:21:52.296 Checking application instance certificate.
-26.11.2019 11:21:52.302 Checking application instance certificate. CN=UA Mono Sample Client, C=US, S=Arizona, O=OPC Foundation, DC=kami-nb
-26.11.2019 11:21:52.523 Channel 0 in Connecting state.
-26.11.2019 11:21:52.732 Channel 0: SendHelloMessage()
-26.11.2019 11:21:52.929 Channel 0: ProcessAcknowledgeMessage()
-26.11.2019 11:21:52.934 Channel 0 in Opening state.
-26.11.2019 11:21:52.942 Token #0 created. CreatedAt = 10:21:52.941 . Lifetime = 3600000
-26.11.2019 11:21:53.135 Channel 0: ProcessOpenSecureChannelResponse()
-26.11.2019 11:21:53.142 Security Policy: http://opcfoundation.org/UA/SecurityPolicy#None
-26.11.2019 11:21:53.146 Sender Certificate: (none)
-26.11.2019 11:21:53.157 SECURE CHANNEL CREATED [.NetStandard ClientChannel UA-TCP 1.4.354.0] [ID=15383] Connected To: opc.tcp://milo.digitalpetri.com:62541/milo [None/None/Binary]
-26.11.2019 11:21:53.162 Token #15983 activated. CreatedAt = 10:21:52.941 . Lifetime = 3600000
-26.11.2019 11:21:53.166 Channel 15383 in Open state.
-26.11.2019 11:21:53.368 Channel 15383: Close
-26.11.2019 11:21:53.376 Channel 15383 in Closing state.
-26.11.2019 11:21:53.398 Channel 15383: SendCloseSecureChannelRequest()
-26.11.2019 11:21:53.587 Channel 0 in Closed state.
-26.11.2019 11:21:53.591 CLIENTCHANNEL SOCKET CLOSED: B1DA8A00, ChannelId=15383
-26.11.2019 11:21:53.628 Channel 0 in Connecting state.
-26.11.2019 11:21:53.811 Channel 0: SendHelloMessage()
-26.11.2019 11:21:53.996 Channel 0: ProcessAcknowledgeMessage()
-26.11.2019 11:21:54.001 Channel 0 in Opening state.
-26.11.2019 11:21:54.005 Token #0 created. CreatedAt = 10:21:54.005 . Lifetime = 3600000
-26.11.2019 11:21:54.188 Channel 0: ProcessOpenSecureChannelResponse()
-26.11.2019 11:21:54.193 Security Policy: http://opcfoundation.org/UA/SecurityPolicy#None
-26.11.2019 11:21:54.197 Sender Certificate: (none)
-26.11.2019 11:21:54.201 SECURE CHANNEL CREATED [.NetStandard ClientChannel UA-TCP 1.4.354.0] [ID=15384] Connected To: opc.tcp://milo.digitalpetri.com:62541/milo [None/None/Binary]
-26.11.2019 11:21:54.206 Token #15984 activated. CreatedAt = 10:21:54.005 . Lifetime = 3600000
-26.11.2019 11:21:54.210 Channel 15384 in Open state.
-26.11.2019 11:21:54.698 Revised session timeout value: 60000. 
-26.11.2019 11:21:54.714 Max response message size value: 4194304. Max request message size: 2097152 
-26.11.2019 11:21:54.726 Server signature is null or empty.
-26.11.2019 11:21:54.922 Empty results were received for the ActivateSession call.
-26.11.2019 11:21:57.276 PUBLISH #1 SENT
-26.11.2019 11:22:07.300 PUBLISH #1 RECEIVED
-26.11.2019 11:22:07.339 NOTIFICATION RECEIVED: SubId=56, SeqNo=1
-26.11.2019 11:22:07.405 PUBLISH #2 SENT
-26.11.2019 11:22:07.424 NotificationReceived: ClientHandle=4, Value=0.206375101944138
-26.11.2019 11:22:07.500 NotificationReceived: ClientHandle=5, Value=0.399326682733285
-26.11.2019 11:22:07.545 NotificationReceived: ClientHandle=6, Value=0.124851808986848
-26.11.2019 11:22:07.596 NotificationReceived: ClientHandle=7, Value=0.180692484754185
-26.11.2019 11:22:07.631 NotificationReceived: ClientHandle=8, Value=0.849282531657296
-26.11.2019 11:22:07.667 NotificationReceived: ClientHandle=9, Value=0.943044410517046
-26.11.2019 11:22:07.706 NotificationReceived: ClientHandle=10, Value=0.609610207579485
-26.11.2019 11:22:07.746 NotificationReceived: ClientHandle=11, Value=0.351193534252781
-26.11.2019 11:22:17.276 PUBLISH #2 RECEIVED
-26.11.2019 11:22:17.308 NOTIFICATION RECEIVED: SubId=56, SeqNo=2
-26.11.2019 11:22:17.351 NotificationReceived: ClientHandle=4, Value=0.0990121864280926
-26.11.2019 11:22:17.353 PUBLISH #3 SENT
-26.11.2019 11:22:17.391 NotificationReceived: ClientHandle=5, Value=0.443955007488354
-26.11.2019 11:22:17.458 NotificationReceived: ClientHandle=6, Value=0.802447036759411
-26.11.2019 11:22:17.494 NotificationReceived: ClientHandle=7, Value=0.944358293724506
-26.11.2019 11:22:17.535 NotificationReceived: ClientHandle=8, Value=0.139218963807981
-26.11.2019 11:22:17.570 NotificationReceived: ClientHandle=9, Value=0.312232787893853
-26.11.2019 11:22:17.604 NotificationReceived: ClientHandle=10, Value=0.377754179528849
-26.11.2019 11:22:17.637 NotificationReceived: ClientHandle=11, Value=0.236300252570564
-26.11.2019 11:22:27.275 PUBLISH #3 RECEIVED
-26.11.2019 11:22:27.312 NOTIFICATION RECEIVED: SubId=56, SeqNo=3
-26.11.2019 11:22:27.373 NotificationReceived: ClientHandle=4, Value=0.542088616823258
-26.11.2019 11:22:27.374 PUBLISH #4 SENT
-26.11.2019 11:22:27.428 NotificationReceived: ClientHandle=5, Value=0.442650439404734
-26.11.2019 11:22:27.542 NotificationReceived: ClientHandle=6, Value=0.788807876333383
-26.11.2019 11:22:27.580 NotificationReceived: ClientHandle=7, Value=0.715118226336795
-26.11.2019 11:22:27.611 NotificationReceived: ClientHandle=8, Value=0.236968494660564
-26.11.2019 11:22:27.647 NotificationReceived: ClientHandle=9, Value=0.555332432242967
-26.11.2019 11:22:27.684 NotificationReceived: ClientHandle=10, Value=0.42963689911131
-26.11.2019 11:22:27.730 NotificationReceived: ClientHandle=11, Value=0.914412691114791
-26.11.2019 11:22:33.113 PUBLISH #4 RECEIVED
-26.11.2019 11:22:33.114 Channel 15384: Close
-26.11.2019 11:22:33.134 Channel 15384 in Closing state.
-26.11.2019 11:22:33.144 Channel 15384: SendCloseSecureChannelRequest()
-26.11.2019 11:22:33.158 ***EXCEPTION*** BadNoSubscription
-26.11.2019 11:22:33.171 Publish #4, Subscription count = 0, Error: BadNoSubscription
-26.11.2019 11:22:33.183 Publish abandoned after error because session id changed: Old ns=1;s=Session:609aa8a9-9b4d-40ee-bfdd-7081ca3afad7 != New 
-26.11.2019 11:22:33.332 Channel 0 in Closed state.
-26.11.2019 11:22:33.343 CLIENTCHANNEL SOCKET CLOSED: 64B65F00, ChannelId=15384
+************************* Logging started at 11/29/2019 08:32:48
+29.11.2019 08:32:49.186 Checking application instance certificate.
+29.11.2019 08:32:49.194 Checking application instance certificate. CN=UA Mono Sample Client, C=US, S=Arizona, O=OPC Foundation, DC=kami-nb
+29.11.2019 08:32:49.461 Channel 0 in Connecting state.
+29.11.2019 08:32:49.737 Channel 0: SendHelloMessage()
+29.11.2019 08:32:49.932 Channel 0: ProcessAcknowledgeMessage()
+29.11.2019 08:32:49.938 Channel 0 in Opening state.
+29.11.2019 08:32:49.943 Token #0 created. CreatedAt = 07:32:49.943 . Lifetime = 3600000
+29.11.2019 08:32:50.151 Channel 0: ProcessOpenSecureChannelResponse()
+29.11.2019 08:32:50.165 Security Policy: http://opcfoundation.org/UA/SecurityPolicy#None
+29.11.2019 08:32:50.173 Sender Certificate: (none)
+29.11.2019 08:32:50.188 SECURE CHANNEL CREATED [.NetStandard ClientChannel UA-TCP 1.4.354.0] [ID=243] Connected To: opc.tcp://milo.digitalpetri.com:62541/milo [None/None/Binary]
+29.11.2019 08:32:50.196 Token #584 activated. CreatedAt = 07:32:49.943 . Lifetime = 3600000
+29.11.2019 08:32:50.202 Channel 243 in Open state.
+29.11.2019 08:32:50.406 Channel 243: Close
+29.11.2019 08:32:50.413 Channel 243 in Closing state.
+29.11.2019 08:32:50.418 Channel 243: SendCloseSecureChannelRequest()
+29.11.2019 08:32:50.609 Channel 0 in Closed state.
+29.11.2019 08:32:50.614 CLIENTCHANNEL SOCKET CLOSED: A171BE00, ChannelId=243
+29.11.2019 08:32:50.647 Channel 0 in Connecting state.
+29.11.2019 08:32:50.830 Channel 0: SendHelloMessage()
+29.11.2019 08:32:51.014 Channel 0: ProcessAcknowledgeMessage()
+29.11.2019 08:32:51.019 Channel 0 in Opening state.
+29.11.2019 08:32:51.024 Token #0 created. CreatedAt = 07:32:51.024 . Lifetime = 3600000
+29.11.2019 08:32:51.212 Channel 0: ProcessOpenSecureChannelResponse()
+29.11.2019 08:32:51.217 Security Policy: http://opcfoundation.org/UA/SecurityPolicy#None
+29.11.2019 08:32:51.221 Sender Certificate: (none)
+29.11.2019 08:32:51.226 SECURE CHANNEL CREATED [.NetStandard ClientChannel UA-TCP 1.4.354.0] [ID=244] Connected To: opc.tcp://milo.digitalpetri.com:62541/milo [None/None/Binary]
+29.11.2019 08:32:51.233 Token #585 activated. CreatedAt = 07:32:51.024 . Lifetime = 3600000
+29.11.2019 08:32:51.238 Channel 244 in Open state.
+29.11.2019 08:32:51.691 Revised session timeout value: 60000. 
+29.11.2019 08:32:51.699 Max response message size value: 4194304. Max request message size: 2097152 
+29.11.2019 08:32:51.705 Server signature is null or empty.
+29.11.2019 08:32:51.892 Empty results were received for the ActivateSession call.
+29.11.2019 08:32:54.242 PUBLISH #1 SENT
+29.11.2019 08:33:04.254 PUBLISH #1 RECEIVED
+29.11.2019 08:33:04.279 NOTIFICATION RECEIVED: SubId=121, SeqNo=1
+29.11.2019 08:33:04.330 PUBLISH #2 SENT
+29.11.2019 08:33:04.339 NotificationReceived: ClientHandle=4, Value=0.923063521776544
+29.11.2019 08:33:04.394 NotificationReceived: ClientHandle=5, Value=0.0131072262681183
+29.11.2019 08:33:04.426 NotificationReceived: ClientHandle=6, Value=0.701419741459294
+29.11.2019 08:33:04.442 NotificationReceived: ClientHandle=7, Value=0.90842559912192
+29.11.2019 08:33:04.470 NotificationReceived: ClientHandle=8, Value=0.310371567146642
+29.11.2019 08:33:04.491 NotificationReceived: ClientHandle=9, Value=0.229756784750274
+29.11.2019 08:33:04.526 NotificationReceived: ClientHandle=10, Value=0.700205965121301
+29.11.2019 08:33:04.544 NotificationReceived: ClientHandle=11, Value=0.670114921032723
+29.11.2019 08:33:14.244 PUBLISH #2 RECEIVED
+29.11.2019 08:33:14.266 NOTIFICATION RECEIVED: SubId=121, SeqNo=2
+29.11.2019 08:33:14.296 NotificationReceived: ClientHandle=4, Value=0.970131204465768
+29.11.2019 08:33:14.297 PUBLISH #3 SENT
+29.11.2019 08:33:14.325 NotificationReceived: ClientHandle=5, Value=0.464331983815356
+29.11.2019 08:33:14.384 NotificationReceived: ClientHandle=6, Value=0.521906088396872
+29.11.2019 08:33:14.406 NotificationReceived: ClientHandle=7, Value=0.248421710471389
+29.11.2019 08:33:14.421 NotificationReceived: ClientHandle=8, Value=0.92500307680483
+29.11.2019 08:33:14.447 NotificationReceived: ClientHandle=9, Value=0.321489747971588
+29.11.2019 08:33:14.467 NotificationReceived: ClientHandle=10, Value=0.969517991856206
+29.11.2019 08:33:14.498 NotificationReceived: ClientHandle=11, Value=0.233095999600132
+29.11.2019 08:33:24.347 PUBLISH #3 RECEIVED
+29.11.2019 08:33:24.382 NOTIFICATION RECEIVED: SubId=121, SeqNo=3
+29.11.2019 08:33:24.423 NotificationReceived: ClientHandle=4, Value=0.160902537397034
+29.11.2019 08:33:24.423 PUBLISH #4 SENT
+29.11.2019 08:33:24.467 NotificationReceived: ClientHandle=5, Value=0.771010286616166
+29.11.2019 08:33:24.571 NotificationReceived: ClientHandle=6, Value=0.405621638965277
+29.11.2019 08:33:24.606 NotificationReceived: ClientHandle=7, Value=0.129416161641468
+29.11.2019 08:33:24.635 NotificationReceived: ClientHandle=8, Value=0.38745501617453
+29.11.2019 08:33:24.674 NotificationReceived: ClientHandle=9, Value=0.320012219901858
+29.11.2019 08:33:24.711 NotificationReceived: ClientHandle=10, Value=0.405830826249702
+29.11.2019 08:33:24.747 NotificationReceived: ClientHandle=11, Value=0.170599074039047
+29.11.2019 08:33:34.241 PUBLISH #4 RECEIVED
+29.11.2019 08:33:34.272 NOTIFICATION RECEIVED: SubId=121, SeqNo=4
+29.11.2019 08:33:34.311 NotificationReceived: ClientHandle=4, Value=0.77878165721804
+29.11.2019 08:33:34.312 PUBLISH #5 SENT
+29.11.2019 08:33:34.360 NotificationReceived: ClientHandle=5, Value=0.291770959616071
+29.11.2019 08:33:34.443 NotificationReceived: ClientHandle=6, Value=0.0447323809991502
+29.11.2019 08:33:34.483 NotificationReceived: ClientHandle=7, Value=0.422872598143691
+29.11.2019 08:33:34.519 NotificationReceived: ClientHandle=8, Value=0.179953903087009
+29.11.2019 08:33:34.560 NotificationReceived: ClientHandle=9, Value=0.258076659320554
+29.11.2019 08:33:34.595 NotificationReceived: ClientHandle=10, Value=0.248798000876472
+29.11.2019 08:33:34.642 NotificationReceived: ClientHandle=11, Value=0.777610888473083
+29.11.2019 08:33:44.244 PUBLISH #5 RECEIVED
+29.11.2019 08:33:44.378 NOTIFICATION RECEIVED: SubId=121, SeqNo=5
+29.11.2019 08:33:44.516 NotificationReceived: ClientHandle=4, Value=0.830147104465909
+29.11.2019 08:33:44.517 PUBLISH #6 SENT
+29.11.2019 08:33:44.561 NotificationReceived: ClientHandle=5, Value=0.721216191094855
+29.11.2019 08:33:44.634 NotificationReceived: ClientHandle=6, Value=0.929069427286516
+29.11.2019 08:33:44.668 NotificationReceived: ClientHandle=7, Value=0.963143081994206
+29.11.2019 08:33:44.699 NotificationReceived: ClientHandle=8, Value=0.798840409887149
+29.11.2019 08:33:44.732 NotificationReceived: ClientHandle=9, Value=0.2800198145953
+29.11.2019 08:33:44.769 NotificationReceived: ClientHandle=10, Value=0.825905817721572
+29.11.2019 08:33:44.804 NotificationReceived: ClientHandle=11, Value=0.657580917522947
+29.11.2019 08:33:54.240 PUBLISH #6 RECEIVED
+29.11.2019 08:33:54.280 NOTIFICATION RECEIVED: SubId=121, SeqNo=6
+29.11.2019 08:33:54.326 NotificationReceived: ClientHandle=4, Value=0.000968519633517073
+29.11.2019 08:33:54.327 PUBLISH #7 SENT
+29.11.2019 08:33:54.388 NotificationReceived: ClientHandle=5, Value=0.429230337426153
+29.11.2019 08:33:54.486 NotificationReceived: ClientHandle=6, Value=0.925420088430862
+29.11.2019 08:33:54.527 NotificationReceived: ClientHandle=7, Value=0.867126354887308
+29.11.2019 08:33:54.580 NotificationReceived: ClientHandle=8, Value=0.687632862182089
+29.11.2019 08:33:54.641 NotificationReceived: ClientHandle=9, Value=0.136281244372088
+29.11.2019 08:33:54.695 NotificationReceived: ClientHandle=10, Value=0.338472287710288
+29.11.2019 08:33:54.744 NotificationReceived: ClientHandle=11, Value=0.720507851753898
+29.11.2019 08:34:04.241 PUBLISH #7 RECEIVED
+29.11.2019 08:34:04.275 NOTIFICATION RECEIVED: SubId=121, SeqNo=7
+29.11.2019 08:34:04.317 NotificationReceived: ClientHandle=4, Value=0.548680037042712
+29.11.2019 08:34:04.318 PUBLISH #8 SENT
+29.11.2019 08:34:04.360 NotificationReceived: ClientHandle=5, Value=0.310731978535401
+29.11.2019 08:34:04.447 NotificationReceived: ClientHandle=6, Value=0.37289397083261
+29.11.2019 08:34:04.491 NotificationReceived: ClientHandle=7, Value=0.743406225981248
+29.11.2019 08:34:04.529 NotificationReceived: ClientHandle=8, Value=0.568949914841722
+29.11.2019 08:34:04.567 NotificationReceived: ClientHandle=9, Value=0.469842487153799
+29.11.2019 08:34:04.598 NotificationReceived: ClientHandle=10, Value=0.32854862213971
+29.11.2019 08:34:04.636 NotificationReceived: ClientHandle=11, Value=0.311440933881311
+29.11.2019 08:34:12.571 PUBLISH #8 RECEIVED
+29.11.2019 08:34:12.572 Channel 244: Close
+29.11.2019 08:34:12.594 Channel 244 in Closing state.
+29.11.2019 08:34:12.602 Channel 244: SendCloseSecureChannelRequest()
+29.11.2019 08:34:12.617 ***EXCEPTION*** BadNoSubscription
+29.11.2019 08:34:12.627 Publish #8, Subscription count = 0, Error: BadNoSubscription
+29.11.2019 08:34:12.637 Publish abandoned after error because session id changed: Old ns=1;s=Session:e1e7a36e-a94a-4520-98f3-896e3369006b != New 
+29.11.2019 08:34:12.791 Channel 0 in Closed state.
+29.11.2019 08:34:12.799 CLIENTCHANNEL SOCKET CLOSED: 4F356500, ChannelId=244
