@@ -9,17 +9,19 @@ public class Frontcube7_6 : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.LeftAlt) && Input.GetKey(KeyCode.Keypad7))
         {
-            if (transform.localEulerAngles.z < 120 || transform.localEulerAngles.z >= 240)
+            if (transform.localEulerAngles.z < 360 || transform.localEulerAngles.z >= 0)
             {
                 transform.Rotate(rotation);
+                print(transform.localEulerAngles);
             }
         }
 
         if (Input.GetKey(KeyCode.LeftAlt) && Input.GetKey("7"))
         {
-            if (transform.localEulerAngles.z <= 120 || transform.localEulerAngles.z > 240)
+            if (transform.localEulerAngles.z <= 360 || transform.localEulerAngles.z > 0)
             {
                 transform.Rotate(-rotation);
+                print(transform.localEulerAngles);
             }
         }
     }

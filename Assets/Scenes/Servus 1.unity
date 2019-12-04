@@ -404,13 +404,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af6391f37f0d3724099e59c57085e664, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  part8: {fileID: 739972547}
-  part7: {fileID: 62572840}
-  part6: {fileID: 1507666143}
-  part5: {fileID: 623436719}
-  part4: {fileID: 45056557}
-  part3: {fileID: 910147778}
-  part2: {fileID: 1426003428}
+  part7: {fileID: 739972547}
+  part6: {fileID: 62572840}
+  part5: {fileID: 1507666143}
+  part4: {fileID: 623436719}
+  part3: {fileID: 45056557}
+  part2: {fileID: 910147778}
+  part1: {fileID: 1426003428}
   moveY: {x: 0, y: 1, z: 0}
   moveZ: {x: 0, y: 0, z: 1}
 --- !u!1 &45056557
@@ -437,14 +437,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 45056557}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: -0.1373, y: 0.9644, z: 0.1474}
   m_LocalScale: {x: 0.1364856, y: 0.001, z: 0.1370591}
   m_Children:
   - {fileID: 1294492917}
   m_Father: {fileID: 1654403041}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!114 &45056559
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1853,7 +1853,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 80dce32ec371eaf4da59500d82aeec63, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.44
+      value: 0.439
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 80dce32ec371eaf4da59500d82aeec63, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1861,7 +1861,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 80dce32ec371eaf4da59500d82aeec63, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.9829998
+      value: 0.98
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 80dce32ec371eaf4da59500d82aeec63, type: 3}
       propertyPath: m_LocalRotation.x
@@ -4844,14 +4844,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1507666143}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.137, y: 0.564394, z: 0.1473227}
-  m_LocalScale: {x: 0.1364856, y: 0.001, z: 0.1370591}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: -0.14356071, y: 0.5643826, z: 0.14700589}
+  m_LocalScale: {x: 0.13648565, y: 0.0009999999, z: 0.13705912}
   m_Children:
   - {fileID: 631019945}
   m_Father: {fileID: 1559812226}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!114 &1507666145
 MonoBehaviour:
   m_ObjectHideFlags: 0

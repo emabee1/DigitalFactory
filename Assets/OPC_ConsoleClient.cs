@@ -29,7 +29,9 @@ public class OPC_ConsoleClient : MonoBehaviour
     {
         // options
         bool autoAccept = true;
-        string endpointURL = "opc.tcp://milo.digitalpetri.com:62541/milo";
+
+        //string endpointURL = "opc.tcp://milo.digitalpetri.com:62541/milo";
+        string endpointURL = "opc.tcp://193.170.2.252:30005";
 
         client = new MyClient(endpointURL, autoAccept);
         client.Run();
@@ -149,98 +151,93 @@ public class OPC_ConsoleClient : MonoBehaviour
             }
 
             print("5 - Create a subscription with publishing interval of 10 second.");
-            subscription = new Subscription(session.DefaultSubscription) { PublishingInterval = 10000 };
+            subscription = new Subscription(session.DefaultSubscription) { PublishingInterval = 300 };
 
             print("6 - Add a list of items to the subscription.");
             #region Subscribe to Kuka Items
-            //var list = new List<MonitoredItem> {
-            //    new MonitoredItem(subscription.DefaultItem)
-            //    {
-            //        DisplayName = "1",
-            //        StartNodeId = "ns=2;s=Axis:1:j"
-            //    },
-            //    new MonitoredItem(subscription.DefaultItem)
-            //    {
-            //        DisplayName = "2",
-            //        StartNodeId = "ns=2;s=Axis:2:j"
-            //    },
-            //                    new MonitoredItem(subscription.DefaultItem)
-            //    {
-            //        DisplayName = "3",
-            //        StartNodeId = "ns=2;s=Axis:3:j"
-            //    },
-            //    new MonitoredItem(subscription.DefaultItem)
-            //    {
-            //        DisplayName = "4",
-            //        StartNodeId = "ns=2;s=Axis:4:j"
-            //    },
-            //                    new MonitoredItem(subscription.DefaultItem)
-            //    {
-            //        DisplayName = "5",
-            //        StartNodeId = "ns=2;s=Axis:5:j"
-            //    },
-            //    new MonitoredItem(subscription.DefaultItem)
-            //    {
-            //        DisplayName = "6",
-            //        StartNodeId = "ns=2;s=Axis:6:j"
-            //    },
-            //                    new MonitoredItem(subscription.DefaultItem)
-            //    {
-            //        DisplayName = "7",
-            //        StartNodeId = "ns=2;s=Axis:7:j"
-            //    },
-            //    new MonitoredItem(subscription.DefaultItem)
-            //    {
-            //        DisplayName = "8",
-            //        StartNodeId = "ns=2;s=Axis:8:j"
-            //    }
-            //};
-            #endregion
-
-
-            #region Subscribe to Milo Items
             var list = new List<MonitoredItem> {
                 new MonitoredItem(subscription.DefaultItem)
                 {
-                    DisplayName = "1",
-                    StartNodeId = "ns=2;s=Dynamic/RandomDouble"
-                },
-                new MonitoredItem(subscription.DefaultItem)
-                {
-                    DisplayName = "2",
-                    StartNodeId = "ns=2;s=Dynamic/RandomDouble"
-                },
-                                new MonitoredItem(subscription.DefaultItem)
-                {
-                    DisplayName = "3",
-                    StartNodeId = "ns=2;s=Dynamic/RandomDouble"
-                },
-                new MonitoredItem(subscription.DefaultItem)
-                {
-                    DisplayName = "4",
-                    StartNodeId = "ns=2;s=Dynamic/RandomDouble"
-                },
-                                new MonitoredItem(subscription.DefaultItem)
-                {
-                    DisplayName = "5",
-                    StartNodeId = "ns=2;s=Dynamic/RandomDouble"
+                    DisplayName = "7",
+                    StartNodeId = "ns=2;s=Axis:7:j"
                 },
                 new MonitoredItem(subscription.DefaultItem)
                 {
                     DisplayName = "6",
-                    StartNodeId = "ns=2;s=Dynamic/RandomDouble"
+                    StartNodeId = "ns=2;s=Axis:6:j"
                 },
                                 new MonitoredItem(subscription.DefaultItem)
                 {
-                    DisplayName = "7",
-                    StartNodeId = "ns=2;s=Dynamic/RandomDouble"
+                    DisplayName = "5",
+                    StartNodeId = "ns=2;s=Axis:5:j"
                 },
                 new MonitoredItem(subscription.DefaultItem)
                 {
-                    DisplayName = "8",
-                    StartNodeId = "ns=2;s=Dynamic/RandomDouble"
-                }               
+                    DisplayName = "4",
+                    StartNodeId = "ns=2;s=Axis:4:j"
+                },
+                                new MonitoredItem(subscription.DefaultItem)
+                {
+                    DisplayName = "3",
+                    StartNodeId = "ns=2;s=Axis:3:j"
+                },
+                new MonitoredItem(subscription.DefaultItem)
+                {
+                    DisplayName = "2",
+                    StartNodeId = "ns=2;s=Axis:2:j"
+                },
+                                new MonitoredItem(subscription.DefaultItem)
+                {
+                    DisplayName = "1",
+                    StartNodeId = "ns=2;s=Axis:1:j"
+                }
             };
+            #endregion
+
+
+            #region Subscribe to Milo Items
+            //var list = new List<MonitoredItem> {
+            //    new MonitoredItem(subscription.DefaultItem)
+            //    {
+            //        DisplayName = "1",
+            //        StartNodeId = "ns=2;s=Dynamic/RandomDouble"
+            //    },
+            //    new MonitoredItem(subscription.DefaultItem)
+            //    {
+            //        DisplayName = "2",
+            //        StartNodeId = "ns=2;s=Dynamic/RandomDouble"
+            //    },
+            //                    new MonitoredItem(subscription.DefaultItem)
+            //    {
+            //        DisplayName = "3",
+            //        StartNodeId = "ns=2;s=Dynamic/RandomDouble"
+            //    },
+            //    new MonitoredItem(subscription.DefaultItem)
+            //    {
+            //        DisplayName = "4",
+            //        StartNodeId = "ns=2;s=Dynamic/RandomDouble"
+            //    },
+            //                    new MonitoredItem(subscription.DefaultItem)
+            //    {
+            //        DisplayName = "5",
+            //        StartNodeId = "ns=2;s=Dynamic/RandomDouble"
+            //    },
+            //    new MonitoredItem(subscription.DefaultItem)
+            //    {
+            //        DisplayName = "6",
+            //        StartNodeId = "ns=2;s=Dynamic/RandomDouble"
+            //    },
+            //                    new MonitoredItem(subscription.DefaultItem)
+            //    {
+            //        DisplayName = "7",
+            //        StartNodeId = "ns=2;s=Dynamic/RandomDouble"
+            //    },
+            //    new MonitoredItem(subscription.DefaultItem)
+            //    {
+            //        DisplayName = "8",
+            //        StartNodeId = "ns=2;s=Dynamic/RandomDouble"
+            //    }               
+            //};
             #endregion
 
             subscription.AddItems(list);
@@ -258,6 +255,7 @@ public class OPC_ConsoleClient : MonoBehaviour
         {
             foreach (var value in item.DequeueValues())
             {
+                //print(item.DisplayName + " Value : " + value.Value);
                 kukaBackMovement.ProcessServerInput((double)value.Value, Int32.Parse(item.DisplayName));
                 kukaFrontMovement.ProcessServerInput((double)value.Value, Int32.Parse(item.DisplayName));
                 autoServus.ProcessServerInput((double)value.Value, Int32.Parse(item.DisplayName));
