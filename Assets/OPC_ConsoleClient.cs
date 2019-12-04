@@ -151,7 +151,7 @@ public class OPC_ConsoleClient : MonoBehaviour
             }
 
             print("5 - Create a subscription with publishing interval of 10 second.");
-            subscription = new Subscription(session.DefaultSubscription) { PublishingInterval = 300 };
+            subscription = new Subscription(session.DefaultSubscription) { PublishingInterval = 500 };
 
             print("6 - Add a list of items to the subscription.");
             #region Subscribe to Kuka Items
@@ -257,7 +257,7 @@ public class OPC_ConsoleClient : MonoBehaviour
             {
                 //print(item.DisplayName + " Value : " + value.Value);
                 kukaBackMovement.ProcessServerInput((double)value.Value, Int32.Parse(item.DisplayName));
-                kukaFrontMovement.ProcessServerInput((double)value.Value, Int32.Parse(item.DisplayName));
+                //kukaFrontMovement.ProcessServerInput((double)value.Value, Int32.Parse(item.DisplayName));
                 autoServus.ProcessServerInput((double)value.Value, Int32.Parse(item.DisplayName));
             }
         }

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class KukaFrontMovement : MonoBehaviour
 {
@@ -89,12 +90,12 @@ public class KukaFrontMovement : MonoBehaviour
     public void ProcessServerInput(double coord, int displayname)
     {
         print("Coord: " + coord + "displayName: " + displayname);
-        boolPositionChanged = true;
 
         switch (displayname)
         {
             case 7:
                 coord = -coord;
+                coord += 90;
                 angle7 = new Vector3(0, (float)coord, 0);
                 print("7: " + angle7);
                 break;
@@ -130,6 +131,11 @@ public class KukaFrontMovement : MonoBehaviour
             default:
                 break;
         }
+
+        boolPositionChanged = true;
+        boolBottom = false;
+        boolTop = false;
+        boolReturnHome = false;
 
     }
 
