@@ -89,7 +89,7 @@ public class KukaFrontMovement : MonoBehaviour
     //Method called by the OPC script
     public void ProcessServerInput(double coord, int displayname)
     {
-        print("Coord: " + coord + "displayName: " + displayname);
+        //print("Coord: " + coord + "displayName: " + displayname);
 
         switch (displayname)
         {
@@ -97,36 +97,29 @@ public class KukaFrontMovement : MonoBehaviour
                 coord = -coord;
                 coord += 90;
                 angle7 = new Vector3(0, (float)coord, 0);
-                print("7: " + angle7);
                 break;
             case 6:
                 angle6 = new Vector3(0, 0, (float)coord);
-                print("6: " + angle6);
                 break;
             case 5:
                 coord = -coord;
                 coord += 180;
                 angle5 = new Vector3(0, (float)coord, 0);
-                print("5: " + angle5);
                 break;
             case 4:
                 angle4 = new Vector3(0, 0, (float)coord);
-                print("4: " + angle4);
                 break;
             case 3:
                 coord = -coord;
                 coord += 180;
                 angle3 = new Vector3(0, (float)coord, 0);
-                print("3: " + angle3);
                 break;
             case 2:
                 angle2 = new Vector3(0, 0, (float)coord);
-                print("2: " + angle2);
                 break;
             case 1:
                 coord = -coord;
                 angle1 = new Vector3(0, (float)coord, 0);
-                print("1: " + angle1);
                 break;
             default:
                 break;
@@ -141,7 +134,6 @@ public class KukaFrontMovement : MonoBehaviour
 
     private void UpdatePosition()
     {
-        print("KukaFront moves");
         part7.transform.localEulerAngles = angle1;
         part6.transform.localEulerAngles = angle2;
         part5.transform.localEulerAngles = angle3;

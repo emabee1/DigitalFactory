@@ -3,9 +3,13 @@ using Opc.Ua.Client;
 using Opc.Ua.Configuration;
 using System;
 using System.Collections.Generic;
+using System.Threading;
 using System.Threading.Tasks;
 using UnityEngine;
 
+/// <summary>
+/// 
+/// </summary>
 public class OPC_ConsoleClient : MonoBehaviour
 {
     MyClient client;
@@ -31,9 +35,11 @@ public class OPC_ConsoleClient : MonoBehaviour
         bool autoAccept = true;
 
         //string endpointURL = "opc.tcp://milo.digitalpetri.com:62541/milo";
-        string endpointURL = "opc.tcp://193.170.2.252:30005";
+        //string endpointURL = "opc.tcp://193.170.2.252:30005";
+        string endpointURL = "opc.tcp://192.168.20.51:30005";
 
         client = new MyClient(endpointURL, autoAccept);
+        //Thread thread = new Thread(new ThreadStart(client.Run));
         client.Run();
     }
 
@@ -150,8 +156,8 @@ public class OPC_ConsoleClient : MonoBehaviour
                     out nextRefs);
             }
 
-            print("5 - Create a subscription with publishing interval of 10 second.");
-            subscription = new Subscription(session.DefaultSubscription) { PublishingInterval = 500 };
+            print("5 - Create a subscription with publishing interval of 0.1 second.");
+            subscription = new Subscription(session.DefaultSubscription) { PublishingInterval = 25 };
 
             print("6 - Add a list of items to the subscription.");
             #region Subscribe to Kuka Items
@@ -256,8 +262,8 @@ public class OPC_ConsoleClient : MonoBehaviour
             foreach (var value in item.DequeueValues())
             {
                 //print(item.DisplayName + " Value : " + value.Value);
-                kukaBackMovement.ProcessServerInput((double)value.Value, Int32.Parse(item.DisplayName));
-                //kukaFrontMovement.ProcessServerInput((double)value.Value, Int32.Parse(item.DisplayName));
+                //kukaBackMovement.ProcessServerInput((double)value.Value, Int32.Parse(item.DisplayName));
+                kukaFrontMovement.ProcessServerInput((double)value.Value, Int32.Parse(item.DisplayName));
                 autoServus.ProcessServerInput((double)value.Value, Int32.Parse(item.DisplayName));
             }
         }

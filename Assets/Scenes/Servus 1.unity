@@ -674,6 +674,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WoodenBox
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 8df54ef5734977d4e86ec047deb7a4e7, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 8df54ef5734977d4e86ec047deb7a4e7, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.701
@@ -5062,6 +5066,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 0949becc13ba94045892dd87c51adbc0, type: 3}
       propertyPath: m_Name
       value: Mill
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 0949becc13ba94045892dd87c51adbc0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 0949becc13ba94045892dd87c51adbc0, type: 3}
       propertyPath: m_LocalPosition.x
