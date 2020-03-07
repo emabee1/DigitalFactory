@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Servus 1.unity
+    path: Assets/Scenes/DigitalFactory.unity
     guid: 5421129a5d0ac474e9ded70e2eaa056d
   m_configObjects: {}
