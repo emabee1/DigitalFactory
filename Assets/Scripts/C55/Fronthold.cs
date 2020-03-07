@@ -1,41 +1,42 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class Fronthold : MonoBehaviour
+namespace C55
 {
-    public GameObject fronthold;
-    Vector3 position = new Vector3(0, 0, 0);
-    Vector3 movement = new Vector3(0.005f, 0, 0);
-    // Start is called before the first frame update
-    void Start()
+    public class Fronthold : MonoBehaviour
     {
-        position.x = fronthold.transform.position.x;
-        position.y = fronthold.transform.position.y;
-        position.z = fronthold.transform.position.z;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        //Manual Movement of the Fronthold
-
-        if ((!Input.GetKey(KeyCode.LeftShift)) && Input.GetKey("b"))
+        public GameObject fronthold;
+        Vector3 position = new Vector3(0, 0, 0);
+        Vector3 movement = new Vector3(0.005f, 0, 0);
+        // Start is called before the first frame update
+        void Start()
         {
             position.x = fronthold.transform.position.x;
             position.y = fronthold.transform.position.y;
             position.z = fronthold.transform.position.z;
-            position += movement;
-            fronthold.transform.position = position;
         }
 
-        if (Input.GetKey(KeyCode.LeftShift) && Input.GetKey("b"))
+        // Update is called once per frame
+        void Update()
         {
-            position.x = fronthold.transform.position.x;
-            position.y = fronthold.transform.position.y;
-            position.z = fronthold.transform.position.z;
-            position -= movement;
-            fronthold.transform.position = position;
+            //Manual Movement of the Fronthold
+
+            if ((!Input.GetKey(KeyCode.LeftShift)) && Input.GetKey("b"))
+            {
+                position.x = fronthold.transform.position.x;
+                position.y = fronthold.transform.position.y;
+                position.z = fronthold.transform.position.z;
+                position += movement;
+                fronthold.transform.position = position;
+            }
+
+            if (Input.GetKey(KeyCode.LeftShift) && Input.GetKey("b"))
+            {
+                position.x = fronthold.transform.position.x;
+                position.y = fronthold.transform.position.y;
+                position.z = fronthold.transform.position.z;
+                position -= movement;
+                fronthold.transform.position = position;
+            }
         }
     }
 }

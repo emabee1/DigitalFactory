@@ -1,33 +1,34 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class Magazine : MonoBehaviour
+namespace C55
 {
-    public GameObject magazine;
-    Vector3 rotation = new Vector3(0, 0, 0);
-    Vector3 movement = new Vector3(0, 1, 0);
-
-    // Start is called before the first frame update
-    void Start()
+    public class Magazine : MonoBehaviour
     {
-        rotation = magazine.transform.localEulerAngles;
-    }
+        public GameObject magazine;
+        Vector3 rotation = new Vector3(0, 0, 0);
+        Vector3 movement = new Vector3(0, 1, 0);
 
-    // Update is called once per frame
-    void Update()
-    {
-        if ((!Input.GetKey(KeyCode.LeftShift)) && Input.GetKey(","))
+        // Start is called before the first frame update
+        void Start()
         {
-            rotation = rotation - movement;
-            magazine.transform.localEulerAngles = rotation;
+            rotation = magazine.transform.localEulerAngles;
         }
 
-        if (Input.GetKey(KeyCode.LeftShift) && Input.GetKey(","))
+        // Update is called once per frame
+        void Update()
         {
-            rotation = rotation + movement;
-            magazine.transform.localEulerAngles = rotation;
-        }
+            if ((!Input.GetKey(KeyCode.LeftShift)) && Input.GetKey(","))
+            {
+                rotation = rotation - movement;
+                magazine.transform.localEulerAngles = rotation;
+            }
 
+            if (Input.GetKey(KeyCode.LeftShift) && Input.GetKey(","))
+            {
+                rotation = rotation + movement;
+                magazine.transform.localEulerAngles = rotation;
+            }
+
+        }
     }
 }

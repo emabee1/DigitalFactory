@@ -1,10 +1,10 @@
 
-************************* Logging started at 03/07/2020 18:08:44
-07.03.2020 18:08:44.592 Checking application instance certificate.
-07.03.2020 18:08:44.613 Checking application instance certificate. CN=UA Mono Sample Client, C=US, S=Arizona, O=OPC Foundation, DC=desktop-d4p5h8v
-07.03.2020 18:08:44.954 Channel 0 in Connecting state.
-07.03.2020 18:09:06.052 ***EXCEPTION*** BadNotConnected
-07.03.2020 18:09:06.070 ***EXCEPTION*** BadNotConnected 'Error establishing a connection: BadNotConnected'
-07.03.2020 18:09:06.083 Channel 0: Close
-07.03.2020 18:09:06.097 Channel 0 in Closed state.
-07.03.2020 18:09:06.110 CLIENTCHANNEL SOCKET CLOSED: FFFFFFFF, ChannelId=0
+************************* Logging started at 03/07/2020 18:38:20
+07.03.2020 18:38:21.042 Checking application instance certificate.
+07.03.2020 18:38:21.057 Checking application instance certificate. CN=UA Mono Sample Client, C=US, S=Arizona, O=OPC Foundation, DC=desktop-d4p5h8v
+07.03.2020 18:38:21.361 Channel 0 in Connecting state.
+07.03.2020 18:38:42.453 ***EXCEPTION*** BadNotConnected
+07.03.2020 18:38:42.479 ***EXCEPTION*** BadNotConnected 'Error establishing a connection: BadNotConnected'
+07.03.2020 18:38:42.493 Channel 0: Close
+07.03.2020 18:38:42.503 Channel 0 in Closed state.
+07.03.2020 18:38:42.509 CLIENTCHANNEL SOCKET CLOSED: FFFFFFFF, ChannelId=0

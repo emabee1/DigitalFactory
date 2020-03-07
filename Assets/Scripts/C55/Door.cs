@@ -1,79 +1,80 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class Door : MonoBehaviour
+namespace C55
 {
-    public GameObject cube;
-
-    Vector3 opened = new Vector3(0, 0f, 0);
-    Vector3 closed = new Vector3(0, -80f, 0);
-
-    Vector3 rotation = new Vector3(0, 0, 0);
-
-    Vector3 movement = new Vector3(0, 1, 0);
-
-    private bool open = false;
-    private bool close = false;
-
-
-    // Start is called before the first frame update
-    void Start()
+    public class Door : MonoBehaviour
     {
-        rotation = cube.transform.localEulerAngles;
-    }
+        public GameObject cube;
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown("y"))
+        Vector3 opened = new Vector3(0, 0f, 0);
+        Vector3 closed = new Vector3(0, -80f, 0);
+
+        Vector3 rotation = new Vector3(0, 0, 0);
+
+        Vector3 movement = new Vector3(0, 1, 0);
+
+        private bool open = false;
+        private bool close = false;
+
+
+        // Start is called before the first frame update
+        void Start()
         {
-            close = true;
-            open = false;
+            rotation = cube.transform.localEulerAngles;
         }
 
-        if (close)
+        // Update is called once per frame
+        void Update()
         {
-            if (Vector3.Distance(rotation, closed) > 1)
+            if (Input.GetKeyDown("y"))
             {
-                rotation -= movement;
-                cube.transform.localEulerAngles = rotation;
-                if (rotation == new Vector3(0, 0, 0))
-                {
-                    rotation = new Vector3(0, 360f, 0);
-                }
-            }
-            else
-            {
-                cube.transform.localEulerAngles = closed;
-                close = false;
-            }
-
-        }
-
-        if (Input.GetKeyDown("x"))
-        {
-            close = false;
-            open = true;
-        }
-
-        if (open)
-        {
-            if (Vector3.Distance(rotation, opened) > 1)
-            {
-                rotation += movement;
-                cube.transform.localEulerAngles = rotation;
-                if (rotation.y >= 360)
-                {
-                    rotation = new Vector3(0, 0, 0);
-                }
-            }
-            else
-            {
-                cube.transform.localEulerAngles = opened;
+                close = true;
                 open = false;
             }
 
+            if (close)
+            {
+                if (Vector3.Distance(rotation, closed) > 1)
+                {
+                    rotation -= movement;
+                    cube.transform.localEulerAngles = rotation;
+                    if (rotation == new Vector3(0, 0, 0))
+                    {
+                        rotation = new Vector3(0, 360f, 0);
+                    }
+                }
+                else
+                {
+                    cube.transform.localEulerAngles = closed;
+                    close = false;
+                }
+
+            }
+
+            if (Input.GetKeyDown("x"))
+            {
+                close = false;
+                open = true;
+            }
+
+            if (open)
+            {
+                if (Vector3.Distance(rotation, opened) > 1)
+                {
+                    rotation += movement;
+                    cube.transform.localEulerAngles = rotation;
+                    if (rotation.y >= 360)
+                    {
+                        rotation = new Vector3(0, 0, 0);
+                    }
+                }
+                else
+                {
+                    cube.transform.localEulerAngles = opened;
+                    open = false;
+                }
+
+            }
         }
     }
 }

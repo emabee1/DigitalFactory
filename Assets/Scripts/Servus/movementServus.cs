@@ -1,23 +1,26 @@
 ﻿using UnityEngine;
 
-public class MovementServus : MonoBehaviour
+namespace Servus
 {
-    public Rigidbody rb;
-    public float Force = 2000f;
-
-    // Update is called once per frame
-    void FixedUpdate()
-    
+    public class MovementServus : MonoBehaviour
     {
-        if (Input.GetKey("w"))
+        public Rigidbody rb;
+        public float Force = 2000f;
+
+        // Update is called once per frame
+        void FixedUpdate()
+    
         {
-            rb.AddForce(0, 0, Force * Time.deltaTime, ForceMode.Impulse);
-            Debug.Log(rb.position);
-        }
-        if (Input.GetKey("s"))
-        {
-            rb.AddForce(0, 0, -Force * Time.deltaTime, ForceMode.Impulse);
-            Debug.Log(rb.position);
+            if (Input.GetKey("w"))
+            {
+                rb.AddForce(0, 0, Force * Time.deltaTime, ForceMode.Impulse);
+                Debug.Log(rb.position);
+            }
+            if (Input.GetKey("s"))
+            {
+                rb.AddForce(0, 0, -Force * Time.deltaTime, ForceMode.Impulse);
+                Debug.Log(rb.position);
+            }
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class movementCamera : MonoBehaviour
+public class MovementCamera : MonoBehaviour
 {
     public float speed = 2.0f;
     public float speedH = 2.0f;

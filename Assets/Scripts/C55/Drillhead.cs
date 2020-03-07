@@ -1,44 +1,44 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class Drillhead : MonoBehaviour
+namespace C55
 {
-    public GameObject drillhead;
-    Vector3 position = new Vector3(0, 0, 0);
-    //Vector3 positionto = new Vector3(0, 0, 0);
-    Vector3 movement = new Vector3(0, 0.005f, 0);
-    //bool toTop = false;
-    //bool toBottom = false;
-    //bool toChance = false;
-
-    // Start is called before the first frame update
-    void Start()
+    public class Drillhead : MonoBehaviour
     {
-        position = drillhead.transform.position;
-    }
+        public GameObject drillhead;
+        Vector3 position = new Vector3(0, 0, 0);
+        //Vector3 positionto = new Vector3(0, 0, 0);
+        Vector3 movement = new Vector3(0, 0.005f, 0);
+        //bool toTop = false;
+        //bool toBottom = false;
+        //bool toChance = false;
 
-    // Update is called once per frame
-    void Update()
-    {
-        //Manual Movement of the Drillhead
-
-        if ((!Input.GetKey(KeyCode.LeftShift)) && Input.GetKey("c"))
+        // Start is called before the first frame update
+        void Start()
         {
-            position += movement;
-            drillhead.transform.position = position;
+            position = drillhead.transform.position;
         }
 
-        if (Input.GetKey(KeyCode.LeftShift) && Input.GetKey("c"))
+        // Update is called once per frame
+        void Update()
         {
-            position -= movement;
-            drillhead.transform.position = position;
-        }
+            //Manual Movement of the Drillhead
+
+            if ((!Input.GetKey(KeyCode.LeftShift)) && Input.GetKey("c"))
+            {
+                position += movement;
+                drillhead.transform.position = position;
+            }
+
+            if (Input.GetKey(KeyCode.LeftShift) && Input.GetKey("c"))
+            {
+                position -= movement;
+                drillhead.transform.position = position;
+            }
         
         
         
         
-        /*
+            /*
          * AutoPositioning of the Drillhead
          *  
         if (Input.GetKeyDown("c"))
@@ -112,5 +112,6 @@ public class Drillhead : MonoBehaviour
             }
         }
         */
+        }
     }
 }

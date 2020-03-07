@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class setCam : MonoBehaviour
+public class SetCam : MonoBehaviour
 {
     void OnMouseDown()
     {
